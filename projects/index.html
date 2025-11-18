@@ -13,51 +13,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Rambla:wght@400;700&display=swap" rel="stylesheet">
 
     <style>
-        .bg-theme-orange {
-            background-color: #FFB766;
-        }
-
-        .text-theme-orange {
-            color: #E67E22;
-        }
-
-        .text-theme-brown {
-            color: #A04000;
-        }
-
-        .border-theme-brown {
-            border-color: #C05010;
-        }
-
-        .btn-orange {
-            background-color: #FF8C00;
-        }
-
-        .btn-orange:hover {
-            background-color: #E67E00;
-        }
-
-        .bg-brand-active {
-            background-color: #E67E22;
-        }
-
-        .bg-brand-light {
-            background-color: #FFF0E0;
-        }
-
-        .font-rambla {
-            font-family: 'Rambla', sans-serif;
-        }
+        .bg-theme-orange { background-color: #FFB766; }
+        .text-theme-orange { color: #E67E22; }
+        .text-theme-brown { color: #A04000; }
+        .border-theme-brown { border-color: #C05010; }
+        .btn-orange { background-color: #FF8C00; }
+        .btn-orange:hover { background-color: #E67E00; }
+        .bg-brand-active { background-color: #E67E22; }
+        .bg-brand-light { background-color: #FFF0E0; }
+        .font-rambla { font-family: 'Rambla', sans-serif; }
 
         .lang-btn.active {
             font-weight: bold;
             text-decoration: underline;
             color: #E67E22;
         }
-
-        .lang-btn {
-            cursor: pointer;
-        }
+        .lang-btn { cursor: pointer; }
 
         .amount-radio:checked+label {
             background-color: #E67E22;
@@ -72,29 +43,20 @@
             z-index: 10;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
     </style>
 </head>
 
 <body class="font-sans text-gray-800 bg-gray-50">
 
-    <header class="bg-white py-4 shadow-sm sticky top-0 z-50">
-        <div class="container mx-auto px-4 flex justify-between items-center">
+    <header class="bg-white py-4 shadow-sm fixed top-0 left-0 w-full z-50 h-36">
+        <div class="container mx-auto px-4 flex justify-between items-center h-full">
 
             <div class="flex items-center gap-4">
-                <div
-                    class="h-12 w-12 rounded-full border-2 border-gray-800 flex items-center justify-center overflow-hidden bg-white">
-                    <i class="fa-solid fa-cross text-orange-500 text-2xl"></i>
-                </div>
-                <div class="text-left hidden sm:block">
-                    <h1 class="text-theme-orange font-bold text-sm uppercase leading-tight">
-                        Ashwini Welfare Foundation
-                    </h1>
-                </div>
+                <a href="/">
+                    <img src="./src/logo.svg" alt="AWF Logo" class="h-32 w-auto object-contain">
+                </a>
             </div>
-
             <div class="flex items-center gap-4">
 
                 <nav class="hidden md:block">
@@ -108,8 +70,7 @@
                 <div class="text-sm font-medium border-l pl-4 border-gray-300 hidden sm:block">
                     <span onclick="changeLanguage('nl')" class="lang-btn hover:text-orange-500" id="btn-nl">NL</span>
                     <span class="text-gray-400 mx-1">|</span>
-                    <span onclick="changeLanguage('en')" class="lang-btn active hover:text-orange-500"
-                        id="btn-en">EN</span>
+                    <span onclick="changeLanguage('en')" class="lang-btn active hover:text-orange-500" id="btn-en">EN</span>
                 </div>
 
                 <button id="mobile-menu-button" onclick="toggleMobileMenu()" class="md:hidden p-2 text-gray-800">
@@ -118,7 +79,7 @@
             </div>
         </div>
 
-        <div id="mobile-menu" class="hidden md:hidden bg-white px-4 pt-2 pb-4 border-t border-gray-100">
+        <div id="mobile-menu" class="hidden md:hidden bg-white px-4 pt-2 pb-4 border-t border-gray-100 absolute top-36 left-0 w-full shadow-md">
             <ul class="flex flex-col gap-3 text-gray-800 font-medium text-base">
                 <li><a href="#" class="hover:text-orange-500 block py-1" data-i18n="nav_about">About us</a></li>
                 <li><a href="#" class="hover:text-orange-500 block py-1" data-i18n="nav_work">Our work</a></li>
@@ -127,8 +88,7 @@
                     <div class="text-sm font-medium">
                         <span onclick="changeLanguage('nl')" class="lang-btn hover:text-orange-500" id="btn-nl-mobile">NL</span>
                         <span class="text-gray-400 mx-1">|</span>
-                        <span onclick="changeLanguage('en')" class="lang-btn active hover:text-orange-500"
-                            id="btn-en-mobile">EN</span>
+                        <span onclick="changeLanguage('en')" class="lang-btn active hover:text-orange-500" id="btn-en-mobile">EN</span>
                     </div>
                 </li>
             </ul>
@@ -136,7 +96,7 @@
 
     </header>
 
-    <section class="relative w-full h-[500px] overflow-hidden">
+    <section class="relative w-full h-[500px] overflow-hidden mt-36">
         <div class="absolute inset-0 flex w-full h-full">
             <div class="w-1/2 h-full bg-cover bg-center relative" style="background-image: url('./src/foto-1.png');">
                 <div class="absolute inset-0 bg-black/20"></div>
@@ -161,34 +121,24 @@
     <section class="bg-theme-orange py-16">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-
                 <div class="flex flex-col items-center group cursor-pointer">
-                    <div
-                        class="w-28 h-28 rounded-full flex items-center justify-center mb-6 transition-transform transform group-hover:scale-105 border-2 border-theme-brown bg-white/20 backdrop-blur-sm">
+                    <div class="w-28 h-28 rounded-full flex items-center justify-center mb-6 transition-transform transform group-hover:scale-105 border-2 border-theme-brown bg-white/20 backdrop-blur-sm">
                         <i class="fa-solid fa-hand-holding-dollar text-5xl text-theme-brown"></i>
                     </div>
-                    <span class="font-rambla text-gray-900 text-xl font-medium" data-i18n="service_fund">Fund a
-                        Project</span>
+                    <span class="font-rambla text-gray-900 text-xl font-medium" data-i18n="service_fund">Fund a Project</span>
                 </div>
-
                 <div class="flex flex-col items-center group cursor-pointer">
-                    <div
-                        class="w-28 h-28 rounded-full flex items-center justify-center mb-6 transition-transform transform group-hover:scale-105 border-2 border-theme-brown bg-white/20 backdrop-blur-sm">
+                    <div class="w-28 h-28 rounded-full flex items-center justify-center mb-6 transition-transform transform group-hover:scale-105 border-2 border-theme-brown bg-white/20 backdrop-blur-sm">
                         <i class="fa-solid fa-graduation-cap text-5xl text-theme-brown"></i>
                     </div>
-                    <span class="font-rambla text-gray-900 text-xl font-medium" data-i18n="service_edu">Support
-                        Education</span>
+                    <span class="font-rambla text-gray-900 text-xl font-medium" data-i18n="service_edu">Support Education</span>
                 </div>
-
                 <div class="flex flex-col items-center group cursor-pointer">
-                    <div
-                        class="w-28 h-28 rounded-full flex items-center justify-center mb-6 transition-transform transform group-hover:scale-105 border-2 border-theme-brown bg-white/20 backdrop-blur-sm">
+                    <div class="w-28 h-28 rounded-full flex items-center justify-center mb-6 transition-transform transform group-hover:scale-105 border-2 border-theme-brown bg-white/20 backdrop-blur-sm">
                         <i class="fa-solid fa-clipboard-list text-5xl text-theme-brown"></i>
                     </div>
-                    <span class="font-rambla text-gray-900 text-xl font-medium" data-i18n="service_care">Provide
-                        Care</span>
+                    <span class="font-rambla text-gray-900 text-xl font-medium" data-i18n="service_care">Provide Care</span>
                 </div>
-
             </div>
         </div>
     </section>
@@ -196,132 +146,89 @@
     <section id="donation-form" class="py-16 bg-gray-50">
         <div class="container mx-auto px-4 max-w-3xl">
             <div class="bg-white p-8 rounded-xl shadow-2xl border-t-4 border-theme-orange">
-
                 <h2 class="font-rambla text-3xl text-gray-800 font-bold mb-8 text-center" data-i18n="form_heading">
                     Steun de Ashwini Welfare Foundation
                 </h2>
-
                 <div class="mb-8">
                     <div class="flex w-full rounded-lg overflow-hidden border border-gray-300 shadow-sm">
-                        <button id="freq-monthly" data-freq="monthly"
-                            class="freq-btn flex-1 py-3 px-4 bg-gray-100 text-gray-600 font-semibold hover:bg-gray-200 transition active">
+                        <button id="freq-monthly" data-freq="monthly" class="freq-btn flex-1 py-3 px-4 bg-gray-100 text-gray-600 font-semibold hover:bg-gray-200 transition active">
                             <span data-i18n="donate_monthly">Maandelijks</span>
                         </button>
-                        <button id="freq-once" data-freq="once"
-                            class="freq-btn flex-1 py-3 px-4 bg-gray-100 text-gray-600 font-semibold hover:bg-gray-200 transition">
+                        <button id="freq-once" data-freq="once" class="freq-btn flex-1 py-3 px-4 bg-gray-100 text-gray-600 font-semibold hover:bg-gray-200 transition">
                             <span data-i18n="donate_once">Eenmalig</span>
                         </button>
                     </div>
                 </div>
-
                 <div class="mb-8">
-                    <h3 class="font-bold text-lg text-gray-800 mb-4" data-i18n="donate_amount_label">Kies een Bedrag*
-                    </h3>
+                    <h3 class="font-bold text-lg text-gray-800 mb-4" data-i18n="donate_amount_label">Kies een Bedrag*</h3>
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-
                         <input type="radio" name="amount" id="amount30" value="30" class="hidden amount-radio">
-                        <label for="amount30"
-                            class="bg-white border-2 border-gray-200 text-gray-800 text-center p-4 rounded-lg cursor-pointer transition hover:border-theme-orange">
+                        <label for="amount30" class="bg-white border-2 border-gray-200 text-gray-800 text-center p-4 rounded-lg cursor-pointer transition hover:border-theme-orange">
                             <div class="font-rambla text-2xl font-bold mb-1">€30</div>
-                            <p class="text-xs font-semibold uppercase opacity-75" data-i18n="donate_opt_30_desc">Voeding
-                            </p>
+                            <p class="text-xs font-semibold uppercase opacity-75" data-i18n="donate_opt_30_desc">Voeding</p>
                         </label>
-
                         <input type="radio" name="amount" id="amount20" value="20" class="hidden amount-radio" checked>
-                        <label for="amount20"
-                            class="bg-white border-2 border-gray-200 text-gray-800 text-center p-4 rounded-lg cursor-pointer transition hover:border-theme-orange">
+                        <label for="amount20" class="bg-white border-2 border-gray-200 text-gray-800 text-center p-4 rounded-lg cursor-pointer transition hover:border-theme-orange">
                             <div class="font-rambla text-2xl font-bold mb-1">€20</div>
-                            <p class="text-xs font-semibold uppercase opacity-75" data-i18n="donate_opt_20_desc">
-                                Onderwijs</p>
+                            <p class="text-xs font-semibold uppercase opacity-75" data-i18n="donate_opt_20_desc">Onderwijs</p>
                         </label>
-
                         <input type="radio" name="amount" id="amount15" value="15" class="hidden amount-radio">
-                        <label for="amount15"
-                            class="bg-white border-2 border-gray-200 text-gray-800 text-center p-4 rounded-lg cursor-pointer transition hover:border-theme-orange">
+                        <label for="amount15" class="bg-white border-2 border-gray-200 text-gray-800 text-center p-4 rounded-lg cursor-pointer transition hover:border-theme-orange">
                             <div class="font-rambla text-2xl font-bold mb-1">€15</div>
-                            <p class="text-xs font-semibold uppercase opacity-75" data-i18n="donate_opt_15_desc">Project
-                                Steun</p>
+                            <p class="text-xs font-semibold uppercase opacity-75" data-i18n="donate_opt_15_desc">Project Steun</p>
                         </label>
-
                         <input type="radio" name="amount" id="amount_custom" value="custom" class="hidden amount-radio">
-                        <label for="amount_custom"
-                            class="bg-white border-2 border-gray-200 text-gray-800 text-center p-4 rounded-lg cursor-pointer transition hover:border-theme-orange flex flex-col justify-center">
+                        <label for="amount_custom" class="bg-white border-2 border-gray-200 text-gray-800 text-center p-4 rounded-lg cursor-pointer transition hover:border-theme-orange flex flex-col justify-center">
                             <i class="fa-solid fa-ellipsis text-lg mb-1"></i>
-                            <p class="text-xs font-semibold uppercase opacity-75" data-i18n="donate_own">Ander Bedrag
-                            </p>
+                            <p class="text-xs font-semibold uppercase opacity-75" data-i18n="donate_own">Ander Bedrag</p>
                         </label>
-
                     </div>
-
                     <div id="custom-amount-input" class="mt-4 hidden">
-                        <label class="block text-sm font-medium text-gray-700 mb-1"
-                            data-i18n="donate_custom_placeholder">Voer uw bedrag in (€)*</label>
+                        <label class="block text-sm font-medium text-gray-700 mb-1" data-i18n="donate_custom_placeholder">Voer uw bedrag in (€)*</label>
                         <div class="relative">
-                            <span
-                                class="absolute left-3 top-1/2 transform -translate-y-1/2 font-bold text-gray-600">€</span>
-                            <input type="number" id="custom-amount"
-                                class="w-full border border-gray-300 rounded p-3 pl-8 focus:outline-none focus:border-theme-orange focus:ring-1 focus:ring-theme-orange transition"
-                                placeholder="25.00" min="5" step="1">
+                            <span class="absolute left-3 top-1/2 transform -translate-y-1/2 font-bold text-gray-600">€</span>
+                            <input type="number" id="custom-amount" class="w-full border border-gray-300 rounded p-3 pl-8 focus:outline-none focus:border-theme-orange focus:ring-1 focus:ring-theme-orange transition" placeholder="25.00" min="5" step="1">
                         </div>
                     </div>
-
                     <div class="bg-brand-light p-4 rounded-lg mt-4 border border-orange-200 flex gap-4 items-start">
                         <div class="text-theme-orange text-2xl pt-1">
                             <i class="fa-solid fa-hands-helping"></i>
                         </div>
                         <p class="text-sm text-gray-700 leading-relaxed" data-i18n="donate_impact_generic">
-                            Uw donatie gaat rechtstreeks naar onze projecten in onderwijs, zorg en algemene steun waar
-                            de nood het hoogst is.
+                            Uw donatie gaat rechtstreeks naar onze projecten in onderwijs, zorg en algemene steun waar de nood het hoogst is.
                         </p>
                     </div>
                 </div>
-
                 <div class="mb-8">
                     <h3 class="font-bold text-lg text-gray-800 mb-4" data-i18n="form_step3">Uw Gegevens</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1"
-                                data-i18n="form_firstname">Voornaam*</label>
-                            <input type="text"
-                                class="w-full border border-gray-300 rounded p-3 focus:outline-none focus:border-theme-orange focus:ring-1 focus:ring-theme-orange transition">
+                            <label class="block text-sm font-medium text-gray-700 mb-1" data-i18n="form_firstname">Voornaam*</label>
+                            <input type="text" class="w-full border border-gray-300 rounded p-3 focus:outline-none focus:border-theme-orange focus:ring-1 focus:ring-theme-orange transition">
                         </div>
-
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1"
-                                data-i18n="form_lastname">Achternaam*</label>
-                            <input type="text"
-                                class="w-full border border-gray-300 rounded p-3 focus:outline-none focus:border-theme-orange focus:ring-1 focus:ring-theme-orange transition">
+                            <label class="block text-sm font-medium text-gray-700 mb-1" data-i18n="form_lastname">Achternaam*</label>
+                            <input type="text" class="w-full border border-gray-300 rounded p-3 focus:outline-none focus:border-theme-orange focus:ring-1 focus:ring-theme-orange transition">
                         </div>
-
                         <div class="md:col-span-2">
-                            <label class="block text-sm font-medium text-gray-700 mb-1"
-                                data-i18n="form_email">E-mail*</label>
-                            <input type="email"
-                                class="w-full border border-gray-300 rounded p-3 focus:outline-none focus:border-theme-orange focus:ring-1 focus:ring-theme-orange transition">
+                            <label class="block text-sm font-medium text-gray-700 mb-1" data-i18n="form_email">E-mail*</label>
+                            <input type="email" class="w-full border border-gray-300 rounded p-3 focus:outline-none focus:border-theme-orange focus:ring-1 focus:ring-theme-orange transition">
                         </div>
                     </div>
                 </div>
-
                 <div>
-
                     <div class="mb-6">
-                        <label class="block text-sm font-medium text-gray-700 mb-2"
-                            data-i18n="pay_method">Betaalmethode*</label>
+                        <label class="block text-sm font-medium text-gray-700 mb-2" data-i18n="pay_method">Betaalmethode*</label>
                         <div class="border border-theme-orange rounded-lg p-4 flex items-center bg-brand-light">
                             <i class="fa-solid fa-wallet text-xl text-theme-orange mr-3"></i>
-                            <span id="payment-text" class="font-semibold" data-i18n="pay_auth_monthly">Automatische
-                                Incasso (Maandelijks)</span>
+                            <span id="payment-text" class="font-semibold" data-i18n="pay_auth_monthly">Automatische Incasso (Maandelijks)</span>
                         </div>
                     </div>
-
-                    <button
-                        class="w-full btn-orange text-white font-bold py-4 px-6 rounded-lg shadow-xl hover:shadow-2xl transition flex justify-center items-center gap-3 text-xl uppercase tracking-wide">
+                    <button class="w-full btn-orange text-white font-bold py-4 px-6 rounded-lg shadow-xl hover:shadow-2xl transition flex justify-center items-center gap-3 text-xl uppercase tracking-wide">
                         <span data-i18n="btn_donate">Doneer Nu</span>
                         <i class="fa-solid fa-heart text-white/50"></i>
                     </button>
                 </div>
-
             </div>
         </div>
     </section>
@@ -330,8 +237,7 @@
         <div class="container mx-auto px-4">
             <div class="flex flex-col lg:flex-row gap-8">
                 <div class="flex-grow">
-                    <h3 class="font-rambla text-theme-orange font-bold text-2xl mb-6" data-i18n="impact_title">Our
-                        Impact</h3>
+                    <h3 class="font-rambla text-theme-orange font-bold text-2xl mb-6" data-i18n="impact_title">Our Impact</h3>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <div class="bg-gray-400 h-40 relative flex items-center justify-center overflow-hidden">
                             <div class="absolute inset-0 border-2 border-white/50 m-2 flex items-center justify-center">
@@ -347,16 +253,12 @@
                             <div class="absolute inset-0 border-2 border-white/50 m-2 flex items-center justify-center">
                                 <span class="text-white font-bold tracking-widest uppercase">Place<br>Holder</span>
                             </div>
-                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="flex flex-col justify-center items-start lg:items-center min-w-[200px] mt-8 lg:mt-0">
                     <p class="text-gray-800 text-lg mb-3" data-i18n="cta_interested">Interested?</p>
-                    <a href="#"
-                        class="font-rambla btn-orange text-white font-bold py-3 px-8 rounded-full shadow hover:opacity-90 transition text-sm uppercase"
-                        data-i18n="cta_btn">
-                        SEE MORE
-                    </a>
+                    <a href="#" class="font-rambla btn-orange text-white font-bold py-3 px-8 rounded-full shadow hover:opacity-90 transition text-sm uppercase" data-i18n="cta_btn">SEE MORE</a>
                 </div>
             </div>
         </div>
@@ -365,82 +267,16 @@
     <script>
         const translations = {
             en: {
-                nav_about: "About us",
-                nav_work: "Our work",
-                nav_contact: "Contact",
-                hero_title: "Hope for<br>Everyone",
-                hero_btn: "Donate Now",
-                service_fund: "Fund a Project",
-                service_edu: "Support Education",
-                service_care: "Provide Care",
-                impact_title: "Our Impact",
-                cta_interested: "Interested?",
-                cta_btn: "SEE MORE",
-
-                form_heading: "Support the Ashwini Welfare Foundation",
-                form_step3: "Your Details",
-
-                donate_monthly: "Monthly",
-                donate_once: "One-time",
-                donate_amount_label: "Choose an Amount*",
-                donate_opt_30_desc: "Food",
-                donate_opt_20_desc: "Education",
-                donate_opt_15_desc: "Project Support",
-                donate_own: "Other Amount",
-                donate_impact_generic: "Your donation goes directly to our projects in education, care, and general support where the need is highest.",
-                donate_custom_placeholder: "Enter your amount (€)*",
-
-                form_firstname: "First name*",
-                form_lastname: "Last name*",
-                form_email: "E-mail*",
-
-                pay_method: "Payment Method*",
-                pay_auth_monthly: "Direct Debit Authorization (Monthly)",
-                pay_auth_once: "One-Time Payment",
-                btn_donate: "Donate Now"
+                nav_about: "About us", nav_work: "Our work", nav_contact: "Contact", hero_title: "Hope for<br>Everyone", hero_btn: "Donate Now", service_fund: "Fund a Project", service_edu: "Support Education", service_care: "Provide Care", impact_title: "Our Impact", cta_interested: "Interested?", cta_btn: "SEE MORE", form_heading: "Support the Ashwini Welfare Foundation", form_step3: "Your Details", donate_monthly: "Monthly", donate_once: "One-time", donate_amount_label: "Choose an Amount*", donate_opt_30_desc: "Food", donate_opt_20_desc: "Education", donate_opt_15_desc: "Project Support", donate_own: "Other Amount", donate_impact_generic: "Your donation goes directly to our projects in education, care, and general support where the need is highest.", donate_custom_placeholder: "Enter your amount (€)*", form_firstname: "First name*", form_lastname: "Last name*", form_email: "E-mail*", pay_method: "Payment Method*", pay_auth_monthly: "Direct Debit Authorization (Monthly)", pay_auth_once: "One-Time Payment", btn_donate: "Donate Now"
             },
             nl: {
-                nav_about: "Over ons",
-                nav_work: "Ons werk",
-                nav_contact: "Contact",
-                hero_title: "HOOP VOOR<br>IEDEREEN",
-                hero_btn: "Doneer Nu",
-                service_fund: "Steun een Project",
-                service_edu: "Steun Onderwijs",
-                service_care: "Verleen Zorg",
-                impact_title: "Onze Impact",
-                cta_interested: "Geïnteresseerd?",
-                cta_btn: "BEKIJK MEER",
-
-                form_heading: "Steun de Ashwini Welfare Foundation",
-                form_step3: "Uw Gegevens",
-
-                donate_monthly: "Maandelijks",
-                donate_once: "Eenmalig",
-                donate_amount_label: "Kies een Bedrag*",
-                donate_opt_30_desc: "voeding",
-                donate_opt_20_desc: "Onderwijs",
-                donate_opt_15_desc: "Project Steun",
-                donate_own: "Ander Bedrag",
-                donate_impact_generic: "Uw donatie gaat rechtstreeks naar onze projecten in onderwijs, zorg en algemene steun waar de nood het hoogst is.",
-                donate_custom_placeholder: "Voer uw bedrag in (€)*",
-
-                form_firstname: "Voornaam*",
-                form_lastname: "Achternaam*",
-                form_email: "E-mail*",
-
-                pay_method: "Betaalmethode*",
-                pay_auth_monthly: "Automatische Incasso (Maandelijks)",
-                pay_auth_once: "Eenmalige Betaling",
-                btn_donate: "Doneer Nu"
+                nav_about: "Over ons", nav_work: "Ons werk", nav_contact: "Contact", hero_title: "HOOP VOOR<br>IEDEREEN", hero_btn: "Doneer Nu", service_fund: "Steun een Project", service_edu: "Steun Onderwijs", service_care: "Verleen Zorg", impact_title: "Onze Impact", cta_interested: "Geïnteresseerd?", cta_btn: "BEKIJK MEER", form_heading: "Steun de Ashwini Welfare Foundation", form_step3: "Uw Gegevens", donate_monthly: "Maandelijks", donate_once: "Eenmalig", donate_amount_label: "Kies een Bedrag*", donate_opt_30_desc: "voeding", donate_opt_20_desc: "Onderwijs", donate_opt_15_desc: "Project Steun", donate_own: "Ander Bedrag", donate_impact_generic: "Uw donatie gaat rechtstreeks naar onze projecten in onderwijs, zorg en algemene steun waar de nood het hoogst is.", donate_custom_placeholder: "Voer uw bedrag in (€)*", form_firstname: "Voornaam*", form_lastname: "Achternaam*", form_email: "E-mail*", pay_method: "Betaalmethode*", pay_auth_monthly: "Automatische Incasso (Maandelijks)", pay_auth_once: "Eenmalige Betaling", btn_donate: "Doneer Nu"
             }
         };
 
         function smoothScroll(event, targetId) {
             event.preventDefault();
-            document.getElementById(targetId).scrollIntoView({
-                behavior: 'smooth'
-            });
+            document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
         }
 
         function toggleMobileMenu() {
@@ -456,10 +292,8 @@
                     element.innerHTML = translations[lang][key];
                 }
             });
-
             const langButtons = document.querySelectorAll('.lang-btn');
             langButtons.forEach(btn => btn.classList.remove('active'));
-
             document.getElementById('btn-nl').classList.toggle('active', lang === 'nl');
             document.getElementById('btn-en').classList.toggle('active', lang === 'en');
 
@@ -468,14 +302,12 @@
             if (btnNlMobile) btnNlMobile.classList.toggle('active', lang === 'nl');
             if (btnEnMobile) btnEnMobile.classList.toggle('active', lang === 'en');
 
-
             updatePaymentText(document.querySelector('.freq-btn.active').getAttribute('data-freq'), lang);
         }
 
         function updatePaymentText(freq, lang) {
             const paymentTextElement = document.getElementById('payment-text');
             const currentLang = document.querySelector('.lang-btn.active').id.replace('btn-', '').replace('-mobile', '');
-
             if (freq === 'monthly') {
                 paymentTextElement.textContent = translations[currentLang].pay_auth_monthly;
             } else {
@@ -483,11 +315,8 @@
             }
         }
 
-
         document.addEventListener('DOMContentLoaded', () => {
-
             changeLanguage('en');
-
             const freqButtons = document.querySelectorAll('.freq-btn');
             const amountRadios = document.querySelectorAll('.amount-radio');
             const customAmountInput = document.getElementById('custom-amount-input');
@@ -496,13 +325,11 @@
                 button.addEventListener('click', () => {
                     freqButtons.forEach(btn => btn.classList.remove('active'));
                     button.classList.add('active');
-
                     updatePaymentText(button.getAttribute('data-freq'));
                 });
             });
 
             document.getElementById('freq-monthly').click();
-
 
             amountRadios.forEach(radio => {
                 radio.addEventListener('change', () => {
@@ -516,7 +343,5 @@
             });
         });
     </script>
-
 </body>
-
 </html>
