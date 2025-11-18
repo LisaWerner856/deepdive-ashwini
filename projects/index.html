@@ -22,48 +22,31 @@
         .bg-brand-active { background-color: #E67E22; }
         .bg-brand-light { background-color: #FFF0E0; }
         .font-rambla { font-family: 'Rambla', sans-serif; }
-
-        .lang-btn.active {
-            font-weight: bold;
-            text-decoration: underline;
-            color: #E67E22;
-        }
+        .lang-btn.active { font-weight: bold; text-decoration: underline; color: #E67E22; }
         .lang-btn { cursor: pointer; }
-
-        .amount-radio:checked+label {
-            background-color: #E67E22;
-            color: white;
-            border-color: #E67E22;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .freq-btn.active {
-            background-color: #E67E22;
-            color: white;
-            z-index: 10;
-        }
-
+        .amount-radio:checked+label { background-color: #E67E22; color: white; border-color: #E67E22; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
+        .freq-btn.active { background-color: #E67E22; color: white; z-index: 10; }
         html { scroll-behavior: smooth; }
     </style>
 </head>
 
-<body class="font-sans text-gray-800 bg-gray-50">
+<body class="font-sans text-gray-800 bg-gray-50 flex flex-col min-h-screen">
 
     <header class="bg-white py-4 shadow-sm fixed top-0 left-0 w-full z-50 h-36">
         <div class="container mx-auto px-4 flex justify-between items-center h-full">
 
             <div class="flex items-center gap-4">
                 <a href="/">
-                    <img src="./src/logo.svg" alt="AWF Logo" class="h-32 w-auto object-contain">
+                    <img src="./src/logo.svg" alt="AWF Logo" class="h-28 w-auto object-contain">
                 </a>
             </div>
             <div class="flex items-center gap-4">
 
                 <nav class="hidden md:block">
                     <ul class="flex gap-8 text-gray-800 font-medium text-sm">
-                        <li><a href="#" class="hover:text-orange-500" data-i18n="nav_about">About us</a></li>
-                        <li><a href="#" class="hover:text-orange-500" data-i18n="nav_work">Our work</a></li>
-                        <li><a href="#" class="hover:text-orange-500" data-i18n="nav_contact">Contact</a></li>
+                        <li><a href="over-ons.html" class="hover:text-orange-500" data-i18n="nav_about">About us</a></li>
+                        <li><a href="ons-werk.html" class="hover:text-orange-500" data-i18n="nav_work">Our work</a></li>
+                        <li><a href="contact.html" class="hover:text-orange-500" data-i18n="nav_contact">Contact</a></li>
                     </ul>
                 </nav>
 
@@ -81,9 +64,9 @@
 
         <div id="mobile-menu" class="hidden md:hidden bg-white px-4 pt-2 pb-4 border-t border-gray-100 absolute top-36 left-0 w-full shadow-md">
             <ul class="flex flex-col gap-3 text-gray-800 font-medium text-base">
-                <li><a href="#" class="hover:text-orange-500 block py-1" data-i18n="nav_about">About us</a></li>
-                <li><a href="#" class="hover:text-orange-500 block py-1" data-i18n="nav_work">Our work</a></li>
-                <li><a href="#" class="hover:text-orange-500 block py-1" data-i18n="nav_contact">Contact</a></li>
+                <li><a href="over-ons.html" class="hover:text-orange-500 block py-1" data-i18n="nav_about">About us</a></li>
+                <li><a href="ons-werk.html" class="hover:text-orange-500 block py-1" data-i18n="nav_work">Our work</a></li>
+                <li><a href="contact.html" class="hover:text-orange-500 block py-1" data-i18n="nav_contact">Contact</a></li>
                 <li class="pt-2 border-t border-gray-100">
                     <div class="text-sm font-medium">
                         <span onclick="changeLanguage('nl')" class="lang-btn hover:text-orange-500" id="btn-nl-mobile">NL</span>
@@ -264,13 +247,98 @@
         </div>
     </section>
 
+    <footer class="bg-gray-900 text-white pt-16 pb-8 mt-auto">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <img src="./src/logo-footer.svg" alt="Ashwini Logo" class="h-32 w-auto">
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="font-bold text-xl mb-6 font-rambla" data-i18n="footer_org">Organization</h3>
+                    <ul class="space-y-4 text-gray-300 text-sm">
+                        <li><a href="over-ons.html" class="hover:text-theme-orange transition" data-i18n="nav_about">About us</a></li>
+                        <li><a href="contact.html" class="hover:text-theme-orange transition" data-i18n="nav_contact">Contact</a></li>
+                        <li><a href="#" class="hover:text-theme-orange transition" data-i18n="footer_partner">Partner with us</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-bold text-xl mb-6 font-rambla" data-i18n="footer_programs">Programs</h3>
+                    <ul class="space-y-4 text-gray-300 text-sm">
+                        <li><a href="#" class="hover:text-theme-orange transition" data-i18n="footer_hosp">Hospital Services</a></li>
+                        <li><a href="#" class="hover:text-theme-orange transition" data-i18n="footer_nurs">Nursing school</a></li>
+                        <li><a href="#" class="hover:text-theme-orange transition" data-i18n="footer_mobile">Mobile Clinic</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-bold text-xl mb-6 font-rambla" data-i18n="footer_support">Support</h3>
+                    <ul class="space-y-4 text-gray-300 text-sm">
+                        <li><a href="#donation-form" class="hover:text-theme-orange transition" data-i18n="nav_donate">Donate</a></li>
+                        <li><a href="#" class="hover:text-theme-orange transition" data-i18n="footer_news">Newsletter</a></li>
+                        <li><a href="#" class="hover:text-theme-orange transition" data-i18n="footer_privacy">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-theme-orange transition" data-i18n="footer_faq">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="border-gray-700 my-8">
+
+            <div class="flex flex-col md:flex-row justify-between items-center text-sm text-theme-orange font-medium">
+                <div class="flex items-center gap-2 mb-4 md:mb-0">
+                    <i class="fa-regular fa-copyright"></i>
+                    <span data-i18n="footer_rights">2025 ASHWINI. All rights reserved.</span>
+                </div>
+                <div data-i18n="footer_registered">
+                    A Registered Charitable Society
+                </div>
+            </div>
+        </div>
+    </footer>
+
     <script>
         const translations = {
             en: {
-                nav_about: "About us", nav_work: "Our work", nav_contact: "Contact", hero_title: "Hope for<br>Everyone", hero_btn: "Donate Now", service_fund: "Fund a Project", service_edu: "Support Education", service_care: "Provide Care", impact_title: "Our Impact", cta_interested: "Interested?", cta_btn: "SEE MORE", form_heading: "Support the Ashwini Welfare Foundation", form_step3: "Your Details", donate_monthly: "Monthly", donate_once: "One-time", donate_amount_label: "Choose an Amount*", donate_opt_30_desc: "Food", donate_opt_20_desc: "Education", donate_opt_15_desc: "Project Support", donate_own: "Other Amount", donate_impact_generic: "Your donation goes directly to our projects in education, care, and general support where the need is highest.", donate_custom_placeholder: "Enter your amount (€)*", form_firstname: "First name*", form_lastname: "Last name*", form_email: "E-mail*", pay_method: "Payment Method*", pay_auth_monthly: "Direct Debit Authorization (Monthly)", pay_auth_once: "One-Time Payment", btn_donate: "Donate Now"
+                nav_about: "About us", nav_work: "Our work", nav_contact: "Contact", nav_donate: "Donate",
+                hero_title: "Hope for<br>Everyone", hero_btn: "Donate Now",
+                service_fund: "Fund a Project", service_edu: "Support Education", service_care: "Provide Care",
+                impact_title: "Our Impact", cta_interested: "Interested?", cta_btn: "SEE MORE",
+                form_heading: "Support the Ashwini Welfare Foundation", form_step3: "Your Details",
+                donate_monthly: "Monthly", donate_once: "One-time", donate_amount_label: "Choose an Amount*",
+                donate_opt_30_desc: "Food", donate_opt_20_desc: "Education", donate_opt_15_desc: "Project Support",
+                donate_own: "Other Amount",
+                donate_impact_generic: "Your donation goes directly to our projects in education, care, and general support where the need is highest.",
+                donate_custom_placeholder: "Enter your amount (€)*",
+                form_firstname: "First name*", form_lastname: "Last name*", form_email: "E-mail*",
+                pay_method: "Payment Method*", pay_auth_monthly: "Direct Debit Authorization (Monthly)", pay_auth_once: "One-Time Payment", btn_donate: "Donate Now",
+
+                footer_org: "Organization", footer_annual: "Annual Report", footer_partner: "Partner with us",
+                footer_programs: "Programs", footer_hosp: "Hospital Services", footer_nurs: "Nursing school", footer_mobile: "Mobile Clinic", footer_disability: "Disability Services",
+                footer_support: "Support", footer_news: "Newsletter", footer_privacy: "Privacy Policy", footer_faq: "FAQ",
+                footer_rights: "2025 ASHWINI. All rights reserved.", footer_registered: "A Registered Charitable Society"
             },
             nl: {
-                nav_about: "Over ons", nav_work: "Ons werk", nav_contact: "Contact", hero_title: "HOOP VOOR<br>IEDEREEN", hero_btn: "Doneer Nu", service_fund: "Steun een Project", service_edu: "Steun Onderwijs", service_care: "Verleen Zorg", impact_title: "Onze Impact", cta_interested: "Geïnteresseerd?", cta_btn: "BEKIJK MEER", form_heading: "Steun de Ashwini Welfare Foundation", form_step3: "Uw Gegevens", donate_monthly: "Maandelijks", donate_once: "Eenmalig", donate_amount_label: "Kies een Bedrag*", donate_opt_30_desc: "voeding", donate_opt_20_desc: "Onderwijs", donate_opt_15_desc: "Project Steun", donate_own: "Ander Bedrag", donate_impact_generic: "Uw donatie gaat rechtstreeks naar onze projecten in onderwijs, zorg en algemene steun waar de nood het hoogst is.", donate_custom_placeholder: "Voer uw bedrag in (€)*", form_firstname: "Voornaam*", form_lastname: "Achternaam*", form_email: "E-mail*", pay_method: "Betaalmethode*", pay_auth_monthly: "Automatische Incasso (Maandelijks)", pay_auth_once: "Eenmalige Betaling", btn_donate: "Doneer Nu"
+                nav_about: "Over ons", nav_work: "Ons werk", nav_contact: "Contact", nav_donate: "Doneer",
+                hero_title: "HOOP VOOR<br>IEDEREEN", hero_btn: "Doneer Nu",
+                service_fund: "Steun een Project", service_edu: "Steun Onderwijs", service_care: "Verleen Zorg",
+                impact_title: "Onze Impact", cta_interested: "Geïnteresseerd?", cta_btn: "BEKIJK MEER",
+                form_heading: "Steun de Ashwini Welfare Foundation", form_step3: "Uw Gegevens",
+                donate_monthly: "Maandelijks", donate_once: "Eenmalig", donate_amount_label: "Kies een Bedrag*",
+                donate_opt_30_desc: "voeding", donate_opt_20_desc: "Onderwijs", donate_opt_15_desc: "Project Steun",
+                donate_own: "Ander Bedrag",
+                donate_impact_generic: "Uw donatie gaat rechtstreeks naar onze projecten in onderwijs, zorg en algemene steun waar de nood het hoogst is.",
+                donate_custom_placeholder: "Voer uw bedrag in (€)*",
+                form_firstname: "Voornaam*", form_lastname: "Achternaam*", form_email: "E-mail*",
+                pay_method: "Betaalmethode*", pay_auth_monthly: "Automatische Incasso (Maandelijks)", pay_auth_once: "Eenmalige Betaling", btn_donate: "Doneer Nu",
+
+                footer_org: "Organisatie", footer_partner: "Partner worden",
+                footer_programs: "Programma's", footer_hosp: "Ziekenhuisdiensten", footer_nurs: "Verpleegschool", footer_mobile: "Mobiele Kliniek",
+                footer_support: "Steun ons", footer_news: "Nieuwsbrief", footer_privacy: "Privacybeleid", footer_faq: "Veelgestelde vragen",
+                footer_rights: "2025 ASHWINI. Alle rechten voorbehouden.", footer_registered: "Een Geregistreerde Liefdadigheidsinstelling"
             }
         };
 
@@ -302,11 +370,16 @@
             if (btnNlMobile) btnNlMobile.classList.toggle('active', lang === 'nl');
             if (btnEnMobile) btnEnMobile.classList.toggle('active', lang === 'en');
 
-            updatePaymentText(document.querySelector('.freq-btn.active').getAttribute('data-freq'), lang);
+            const freqBtn = document.querySelector('.freq-btn.active');
+            if (freqBtn) {
+                updatePaymentText(freqBtn.getAttribute('data-freq'), lang);
+            }
         }
 
         function updatePaymentText(freq, lang) {
             const paymentTextElement = document.getElementById('payment-text');
+            if (!paymentTextElement) return;
+
             const currentLang = document.querySelector('.lang-btn.active').id.replace('btn-', '').replace('-mobile', '');
             if (freq === 'monthly') {
                 paymentTextElement.textContent = translations[currentLang].pay_auth_monthly;
@@ -321,26 +394,31 @@
             const amountRadios = document.querySelectorAll('.amount-radio');
             const customAmountInput = document.getElementById('custom-amount-input');
 
-            freqButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    freqButtons.forEach(btn => btn.classList.remove('active'));
-                    button.classList.add('active');
-                    updatePaymentText(button.getAttribute('data-freq'));
+            if(freqButtons.length > 0) {
+                freqButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        freqButtons.forEach(btn => btn.classList.remove('active'));
+                        button.classList.add('active');
+                        updatePaymentText(button.getAttribute('data-freq'));
+                    });
                 });
-            });
+                const monthlyBtn = document.getElementById('freq-monthly');
+                if(monthlyBtn) monthlyBtn.click();
+            }
 
-            document.getElementById('freq-monthly').click();
-
-            amountRadios.forEach(radio => {
-                radio.addEventListener('change', () => {
-                    if (radio.value === 'custom') {
-                        customAmountInput.classList.remove('hidden');
-                        document.getElementById('custom-amount').focus();
-                    } else {
-                        customAmountInput.classList.add('hidden');
-                    }
+            if(amountRadios.length > 0) {
+                amountRadios.forEach(radio => {
+                    radio.addEventListener('change', () => {
+                        if (radio.value === 'custom') {
+                            customAmountInput.classList.remove('hidden');
+                            const customInput = document.getElementById('custom-amount');
+                            if(customInput) customInput.focus();
+                        } else {
+                            customAmountInput.classList.add('hidden');
+                        }
+                    });
                 });
-            });
+            }
         });
     </script>
 </body>
