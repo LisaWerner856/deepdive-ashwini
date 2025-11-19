@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Work - AWF</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rambla:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        .bg-theme-orange {
+            background-color: #FFB766;
+        }
+
+        .text-theme-orange {
+            color: #E67E22;
+        }
+
+        .text-theme-brown {
+            color: #A04000;
+        }
+
+        .border-theme-brown {
+            border-color: #C05010;
+        }
+
+        .btn-orange {
+            background-color: #FF8C00;
+        }
+
+        .btn-orange:hover {
+            background-color: #E67E00;
+        }
+
+        .bg-brand-active {
+            background-color: #E67E22;
+        }
+
+        .bg-brand-light {
+            background-color: #FFF0E0;
+        }
+
+        .font-rambla {
+            font-family: 'Rambla', sans-serif;
+        }
+
+        .lang-btn.active {
+            font-weight: bold;
+            text-decoration: underline;
+            color: #E67E22;
+        }
+
+        .lang-btn {
+            cursor: pointer;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body class="font-sans text-gray-800 bg-gray-50 flex flex-col min-h-screen">
+
+    <header class="bg-white py-4 shadow-sm fixed top-0 left-0 w-full z-50 h-36">
+        <div class="container mx-auto px-4 flex justify-between items-center h-full max-w-7xl">
+
+            <div class="flex items-center gap-4">
+                <a href="index.html">
+                    <img src="./src/logo.svg" alt="AWF Logo" class="h-28 w-auto object-contain">
+                </a>
+            </div>
+
+            <div class="flex items-center gap-4">
+
+                <nav class="hidden md:block">
+                    <ul class="flex gap-8 text-gray-800 font-medium text-sm">
+                        <li><a href="over-ons.html" class="hover:text-orange-500" data-i18n="nav_about">About us</a>
+                        </li>
+                        <li><a href="ons-werk.html" class="hover:text-orange-500" data-i18n="nav_work">Our work</a></li>
+                        <li><a href="contact.html" class="hover:text-orange-500" data-i18n="nav_contact">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="text-sm font-medium border-l pl-3 border-gray-300 hidden sm:block">
+                    <span onclick="changeLanguage('nl')" class="lang-btn hover:text-orange-500" id="btn-nl">NL</span>
+                    <span class="text-gray-400 mx-1">|</span>
+                    <span onclick="changeLanguage('en')" class="lang-btn active hover:text-orange-500"
+                        id="btn-en">EN</span>
+                </div>
+
+                <button id="mobile-menu-button" onclick="toggleMobileMenu()" class="md:hidden p-2 text-gray-800">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-white px-4 pt-2 pb-4 border-t border-gray-100 absolute top-36 left-0 w-full shadow-md">
+            <ul class="flex flex-col gap-3 text-gray-800 font-medium text-base">
+                <li><a href="over-ons.html" class="hover:text-orange-500 block py-1" data-i18n="nav_about">About us</a>
+                </li>
+                <li><a href="ons-werk.html" class="hover:text-orange-500 block py-1" data-i18n="nav_work">Our work</a>
+                </li>
+                <li><a href="contact.html" class="hover:text-orange-500 block py-1" data-i18n="nav_contact">Contact</a>
+                </li>
+                <li class="pt-2 border-t border-gray-100">
+                    <div class="text-sm font-medium">
+                        <span onclick="changeLanguage('nl')" class="lang-btn hover:text-orange-500"
+                            id="btn-nl-mobile">NL</span>
+                        <span class="text-gray-400 mx-1">|</span>
+                        <span onclick="changeLanguage('en')" class="lang-btn active hover:text-orange-500"
+                            id="btn-en-mobile">EN</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </header>
+
+    <section class="relative w-full h-[250px] overflow-hidden mt-36">
+        <div class="absolute inset-0 flex w-full h-full">
+            <div class="w-full h-full bg-cover bg-center relative" style="background-image: url('./src/banner.png');">
+            </div>
+        </div>
+        <div class="absolute inset-0 flex flex-col justify-center items-center z-10 text-center px-4">
+            <h2 class="font-rambla text-white text-5xl md:text-7xl font-bold uppercase drop-shadow-lg mb-6"
+                data-i18n="hero_title">
+                projects
+            </h2>
+        </div>
+    </section>
+
+    <main class="mt-4 flex-grow py-16 bg-gray-50">
+        <div class="container mx-auto px-4 max-w-4xl">
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 sm:grid-cols-1 gap-8">
+                <div
+                    class="bg-background rounded-2xl overflow-hidden border border-border shadow-lg hover:border-primary transition">
+                    <img alt="Gudalur Adivasi Hospital" class="w-full h-48 object-cover"
+                        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/attachments/gen-images/public/adivasi-hospital-gudalur-z4NbI8GkJcsTaIr92X8DZpCu1Bh84c.jpg">
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-3">
+                            <div>
+                                <h4 class="text-l font-bold text-foreground">Gudalur Adivasi Hospital</h4>
+                                <p class="text-sm text-gray-500">Gudalur Valley</p>
+                            </div>
+                            <span
+                                class="px-3 py-1 rounded-full text-xs font-medium bg-theme-orange text-theme-brown">Active</span>
+                        </div>
+                        <p class="text-foreground/70 leading-relaxed">A 50-bed hospital providing quality healthcare to
+                            tribal and local communities. One of the most sought-after hospitals in the valley.</p>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-background rounded-2xl overflow-hidden border border-border shadow-lg hover:border-primary transition">
+                    <img alt="School of Nursing" class="w-full h-48 object-cover"
+                        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/attachments/gen-images/public/nursing-school-training-ZYy8dsur3qRVwy7RbxRjR3F5tFvFEM.jpg">
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-3">
+                            <div>
+                                <h4 class="text-l font-bold text-foreground">School of Nursing</h4>
+                                <p class="text-sm text-gray-500">Nilgiris District</p>
+                            </div>
+                            <span
+                                class="px-3 py-1 rounded-full text-xs font-medium bg-theme-orange text-theme-brown">Active</span>
+                        </div>
+                        <p class="text-foreground/70 leading-relaxed">Formal nursing school training tribal girls and
+                            upgrading their skills. Graduates provide care across our healthcare network.</p>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-background rounded-2xl overflow-hidden border border-border shadow-lg hover:border-primary transition">
+                    <img alt="Sickle Cell Centre" class="w-full h-48 object-cover"
+                        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/attachments/gen-images/public/healthcare-laboratory-testing-JNxkvMg67LU4YWzuDAHxFzl9HNM9iN.jpg">
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-3">
+                            <div>
+                                <h4 class="text-l font-bold text-foreground">Sickle Cell Centre</h4>
+                                <p class="text-sm text-gray-500">Gudalur Hospital</p>
+                            </div>
+                            <span
+                                class="px-3 py-1 rounded-full text-xs font-medium bg-theme-orange text-theme-brown">Active</span>
+                        </div>
+                        <p class="text-foreground/70 leading-relaxed">Conducting epidemiological assessments and care
+                            for sickle cell disease using sodium metabisulphite test and hemoglobin electrophoresis.</p>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-gray-900 text-white pt-16 pb-8 mt-auto">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <img src="./src/logo-footer.svg" alt="Ashwini Logo" class="h-32 w-auto">
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="font-bold text-xl mb-6 font-rambla" data-i18n="footer_org">Organization</h3>
+                    <ul class="space-y-4 text-gray-300 text-sm">
+                        <li><a href="over-ons.html" class="hover:text-theme-orange transition"
+                                data-i18n="nav_about">About us</a></li>
+                        <li><a href="contact.html" class="hover:text-theme-orange transition"
+                                data-i18n="nav_contact">Contact</a></li>
+                        <li><a href="#" class="hover:text-theme-orange transition" data-i18n="footer_partner">Partner
+                                with us</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-bold text-xl mb-6 font-rambla" data-i18n="footer_programs">Programs</h3>
+                    <ul class="space-y-4 text-gray-300 text-sm">
+                        <li><a href="#" class="hover:text-theme-orange transition" data-i18n="footer_hosp">Hospital
+                                Services</a></li>
+                        <li><a href="#" class="hover:text-theme-orange transition" data-i18n="footer_nurs">Nursing
+                                school</a></li>
+                        <li><a href="#" class="hover:text-theme-orange transition" data-i18n="footer_mobile">Mobile
+                                Clinic</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-bold text-xl mb-6 font-rambla" data-i18n="footer_support">Support</h3>
+                    <ul class="space-y-4 text-gray-300 text-sm">
+                        <li><a href="#" class="hover:text-theme-orange transition" data-i18n="nav_donate">Donate</a>
+                        </li>
+                        <li><a href="#" class="hover:text-theme-orange transition"
+                                data-i18n="footer_news">Newsletter</a></li>
+                        <li><a href="#" class="hover:text-theme-orange transition" data-i18n="footer_privacy">Privacy
+                                Policy</a></li>
+                        <li><a href="#" class="hover:text-theme-orange transition" data-i18n="footer_faq">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="border-gray-700 my-8">
+
+            <div class="flex flex-col md:flex-row justify-between items-center text-sm text-theme-orange font-medium">
+                <div class="flex items-center gap-2 mb-4 md:mb-0">
+                    <i class="fa-regular fa-copyright"></i>
+                    <span data-i18n="footer_rights">2025 ASHWINI. All rights reserved.</span>
+                </div>
+                <div data-i18n="footer_registered">
+                    A Registered Charitable Society
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const translations = {
+            en: {
+                nav_about: "About us", nav_work: "Our work", nav_contact: "Contact", nav_donate: "Donate",
+
+                footer_org: "Organization", footer_partner: "Partner with us",
+                footer_programs: "Programs", footer_hosp: "Hospital Services", footer_nurs: "Nursing school", footer_mobile: "Mobile Clinic",
+                footer_support: "Support", footer_news: "Newsletter", footer_privacy: "Privacy Policy", footer_faq: "FAQ",
+                footer_rights: "2025 ASHWINI. All rights reserved.", footer_registered: "A Registered Charitable Society"
+            },
+            nl: {
+                nav_about: "Over ons", nav_work: "Ons werk", nav_contact: "Contact", nav_donate: "Doneer",
+
+                footer_org: "Organisatie", footer_partner: "Partner worden",
+                footer_programs: "Programma's", footer_hosp: "Ziekenhuisdiensten", footer_nurs: "Verpleegschool", footer_mobile: "Mobiele Kliniek",
+                footer_support: "Steun ons", footer_news: "Nieuwsbrief", footer_privacy: "Privacybeleid", footer_faq: "Veelgestelde vragen",
+                footer_rights: "2025 ASHWINI. Alle rechten voorbehouden.", footer_registered: "Een Geregistreerde Liefdadigheidsinstelling"
+            }
+        };
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        function changeLanguage(lang) {
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    element.innerHTML = translations[lang][key];
+                }
+            });
+            const langButtons = document.querySelectorAll('.lang-btn');
+            langButtons.forEach(btn => btn.classList.remove('active'));
+            document.getElementById('btn-nl').classList.toggle('active', lang === 'nl');
+            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+
+            const btnNlMobile = document.getElementById('btn-nl-mobile');
+            const btnEnMobile = document.getElementById('btn-en-mobile');
+            if (btnNlMobile) btnNlMobile.classList.toggle('active', lang === 'nl');
+            if (btnEnMobile) btnEnMobile.classList.toggle('active', lang === 'en');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            changeLanguage('en');
+        });
+    </script>
+</body>
+
+</html>
