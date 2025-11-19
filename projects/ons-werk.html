@@ -13,18 +13,55 @@
     <link href="https://fonts.googleapis.com/css2?family=Rambla:wght@400;700&display=swap" rel="stylesheet">
 
     <style>
-        .bg-theme-orange { background-color: #FFB766; }
-        .text-theme-orange { color: #E67E22; }
-        .text-theme-brown { color: #A04000; }
-        .border-theme-brown { border-color: #C05010; }
-        .btn-orange { background-color: #FF8C00; }
-        .btn-orange:hover { background-color: #E67E00; }
-        .bg-brand-active { background-color: #E67E22; }
-        .bg-brand-light { background-color: #FFF0E0; }
-        .font-rambla { font-family: 'Rambla', sans-serif; }
-        .lang-btn.active { font-weight: bold; text-decoration: underline; color: #E67E22; }
-        .lang-btn { cursor: pointer; }
-        html { scroll-behavior: smooth; }
+        .bg-theme-orange {
+            background-color: #FFB766;
+        }
+
+        .text-theme-orange {
+            color: #E67E22;
+        }
+
+        .text-theme-brown {
+            color: #A04000;
+        }
+
+        .border-theme-brown {
+            border-color: #C05010;
+        }
+
+        .btn-orange {
+            background-color: #FF8C00;
+        }
+
+        .btn-orange:hover {
+            background-color: #E67E00;
+        }
+
+        .bg-brand-active {
+            background-color: #E67E22;
+        }
+
+        .bg-brand-light {
+            background-color: #FFF0E0;
+        }
+
+        .font-rambla {
+            font-family: 'Rambla', sans-serif;
+        }
+
+        .lang-btn.active {
+            font-weight: bold;
+            text-decoration: underline;
+            color: #E67E22;
+        }
+
+        .lang-btn {
+            cursor: pointer;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
     </style>
 </head>
 
@@ -43,16 +80,19 @@
 
                 <nav class="hidden md:block">
                     <ul class="flex gap-8 text-gray-800 font-medium text-sm">
-                        <li><a href="over-ons.html" class="hover:text-orange-500" data-i18n="nav_about">About us</a></li>
+                        <li><a href="over-ons.html" class="hover:text-orange-500" data-i18n="nav_about">About us</a>
+                        </li>
                         <li><a href="ons-werk.html" class="hover:text-orange-500" data-i18n="nav_work">Our work</a></li>
-                        <li><a href="contact.html" class="hover:text-orange-500" data-i18n="nav_contact">Contact</a></li>
+                        <li><a href="contact.html" class="hover:text-orange-500" data-i18n="nav_contact">Contact</a>
+                        </li>
                     </ul>
                 </nav>
 
                 <div class="text-sm font-medium border-l pl-3 border-gray-300 hidden sm:block">
                     <span onclick="changeLanguage('nl')" class="lang-btn hover:text-orange-500" id="btn-nl">NL</span>
                     <span class="text-gray-400 mx-1">|</span>
-                    <span onclick="changeLanguage('en')" class="lang-btn active hover:text-orange-500" id="btn-en">EN</span>
+                    <span onclick="changeLanguage('en')" class="lang-btn active hover:text-orange-500"
+                        id="btn-en">EN</span>
                 </div>
 
                 <button id="mobile-menu-button" onclick="toggleMobileMenu()" class="md:hidden p-2 text-gray-800">
@@ -61,16 +101,22 @@
             </div>
         </div>
 
-        <div id="mobile-menu" class="hidden md:hidden bg-white px-4 pt-2 pb-4 border-t border-gray-100 absolute top-36 left-0 w-full shadow-md">
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-white px-4 pt-2 pb-4 border-t border-gray-100 absolute top-36 left-0 w-full shadow-md">
             <ul class="flex flex-col gap-3 text-gray-800 font-medium text-base">
-                <li><a href="over-ons.html" class="hover:text-orange-500 block py-1" data-i18n="nav_about">About us</a></li>
-                <li><a href="ons-werk.html" class="hover:text-orange-500 block py-1" data-i18n="nav_work">Our work</a></li>
-                <li><a href="contact.html" class="hover:text-orange-500 block py-1" data-i18n="nav_contact">Contact</a></li>
+                <li><a href="over-ons.html" class="hover:text-orange-500 block py-1" data-i18n="nav_about">About us</a>
+                </li>
+                <li><a href="ons-werk.html" class="hover:text-orange-500 block py-1" data-i18n="nav_work">Our work</a>
+                </li>
+                <li><a href="contact.html" class="hover:text-orange-500 block py-1" data-i18n="nav_contact">Contact</a>
+                </li>
                 <li class="pt-2 border-t border-gray-100">
                     <div class="text-sm font-medium">
-                        <span onclick="changeLanguage('nl')" class="lang-btn hover:text-orange-500" id="btn-nl-mobile">NL</span>
+                        <span onclick="changeLanguage('nl')" class="lang-btn hover:text-orange-500"
+                            id="btn-nl-mobile">NL</span>
                         <span class="text-gray-400 mx-1">|</span>
-                        <span onclick="changeLanguage('en')" class="lang-btn active hover:text-orange-500" id="btn-en-mobile">EN</span>
+                        <span onclick="changeLanguage('en')" class="lang-btn active hover:text-orange-500"
+                            id="btn-en-mobile">EN</span>
                     </div>
                 </li>
             </ul>
@@ -78,17 +124,127 @@
 
     </header>
 
-    <main class="mt-36 flex-grow py-16 bg-gray-50">
+    <section class="relative w-full h-[250px] overflow-hidden mt-36">
+        <div class="absolute inset-0 flex w-full h-full">
+            <div class="w-full h-full bg-cover bg-center relative" style="background-image: url('./src/foto-1.png');">
+            </div>
+        </div>
+        <div class="absolute inset-0 flex flex-col justify-center items-center z-10 text-center px-4">
+            <h2 class="font-rambla text-white text-5xl md:text-7xl font-bold uppercase drop-shadow-lg mb-6"
+                data-i18n="hero_title">
+                projects
+            </h2>
+        </div>
+    </section>
+
+    <main class="mt-4 flex-grow py-16 bg-gray-50">
         <div class="container mx-auto px-4 max-w-4xl">
 
-            <h1 class="font-rambla text-4xl text-theme-orange font-bold mb-8">
-                TITEL
-            </h1>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 sm:grid-cols-1 gap-8">
+                <div
+                    class="bg-background rounded-2xl overflow-hidden border border-border hover:shadow-lg hover:border-primary transition">
+                    <img alt="Gudalur Adivasi Hospital" class="w-full h-48 object-cover"
+                        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/attachments/gen-images/public/adivasi-hospital-gudalur-z4NbI8GkJcsTaIr92X8DZpCu1Bh84c.jpg">
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-3">
+                            <div>
+                                <h4 class="text-xl font-semibold text-foreground">Gudalur Adivasi Hospital</h4>
+                                <p class="text-sm text-foreground/60">Gudalur Valley</p>
+                            </div>
+                            <span
+                                class="px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary">Active</span>
+                        </div>
+                        <p class="text-foreground/70 leading-relaxed">A 50-bed hospital providing quality healthcare to
+                            tribal and local communities. One of the most sought-after hospitals in the valley.</p>
+                    </div>
+                </div>
 
-            <div class="prose max-w-none text-gray-700 leading-relaxed">
-                <p>
-                    INHOUD
-                </p>
+                <div
+                    class="bg-background rounded-2xl overflow-hidden border border-border hover:shadow-lg hover:border-primary transition">
+                    <img alt="School of Nursing" class="w-full h-48 object-cover"
+                        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/attachments/gen-images/public/nursing-school-training-ZYy8dsur3qRVwy7RbxRjR3F5tFvFEM.jpg">
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-3">
+                            <div>
+                                <h4 class="text-xl font-semibold text-foreground">School of Nursing</h4>
+                                <p class="text-sm text-foreground/60">Nilgiris District</p>
+                            </div><span
+                                class="px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary">Active</span>
+                        </div>
+                        <p class="text-foreground/70 leading-relaxed">Formal nursing school training tribal girls and
+                            upgrading their skills. Graduates provide care across our healthcare network.</p>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-background rounded-2xl overflow-hidden border border-border hover:shadow-lg hover:border-primary transition">
+                    <img alt="Sickle Cell Centre" class="w-full h-48 object-cover"
+                        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/attachments/gen-images/public/healthcare-laboratory-testing-JNxkvMg67LU4YWzuDAHxFzl9HNM9iN.jpg">
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-3">
+                            <div>
+                                <h4 class="text-xl font-semibold text-foreground">Sickle Cell Centre</h4>
+                                <p class="text-sm text-foreground/60">Gudalur Hospital</p>
+                            </div><span
+                                class="px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary">Active</span>
+                        </div>
+                        <p class="text-foreground/70 leading-relaxed">Conducting epidemiological assessments and care
+                            for sickle cell disease using sodium metabisulphite test and hemoglobin electrophoresis.</p>
+                    </div>
+                </div>
+
+                <!-- <div
+                    class="bg-background rounded-2xl overflow-hidden border border-border hover:shadow-lg hover:border-primary transition">
+                    <img alt="Gudalur Adivasi Hospital" class="w-full h-48 object-cover"
+                        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/attachments/gen-images/public/adivasi-hospital-gudalur-z4NbI8GkJcsTaIr92X8DZpCu1Bh84c.jpg">
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-3">
+                            <div>
+                                <h4 class="text-xl font-semibold text-foreground">Gudalur Adivasi Hospital</h4>
+                                <p class="text-sm text-foreground/60">Gudalur Valley</p>
+                            </div>
+                            <span
+                                class="px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary">Active</span>
+                        </div>
+                        <p class="text-foreground/70 leading-relaxed">A 50-bed hospital providing quality healthcare to
+                            tribal and local communities. One of the most sought-after hospitals in the valley.</p>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-background rounded-2xl overflow-hidden border border-border hover:shadow-lg hover:border-primary transition">
+                    <img alt="School of Nursing" class="w-full h-48 object-cover"
+                        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/attachments/gen-images/public/nursing-school-training-ZYy8dsur3qRVwy7RbxRjR3F5tFvFEM.jpg">
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-3">
+                            <div>
+                                <h4 class="text-xl font-semibold text-foreground">School of Nursing</h4>
+                                <p class="text-sm text-foreground/60">Nilgiris District</p>
+                            </div><span
+                                class="px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary">Active</span>
+                        </div>
+                        <p class="text-foreground/70 leading-relaxed">Formal nursing school training tribal girls and
+                            upgrading their skills. Graduates provide care across our healthcare network.</p>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-background rounded-2xl overflow-hidden border border-border hover:shadow-lg hover:border-primary transition">
+                    <img alt="Sickle Cell Centre" class="w-full h-48 object-cover"
+                        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/attachments/gen-images/public/healthcare-laboratory-testing-JNxkvMg67LU4YWzuDAHxFzl9HNM9iN.jpg">
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-3">
+                            <div>
+                                <h4 class="text-xl font-semibold text-foreground">Sickle Cell Centre</h4>
+                                <p class="text-sm text-foreground/60">Gudalur Hospital</p>
+                            </div><span
+                                class="px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary">Active</span>
+                        </div>
+                        <p class="text-foreground/70 leading-relaxed">Conducting epidemiological assessments and care
+                            for sickle cell disease using sodium metabisulphite test and hemoglobin electrophoresis.</p>
+                    </div>
+                </div> -->
+
             </div>
 
         </div>
@@ -107,27 +263,36 @@
                 <div>
                     <h3 class="font-bold text-xl mb-6 font-rambla" data-i18n="footer_org">Organization</h3>
                     <ul class="space-y-4 text-gray-300 text-sm">
-                        <li><a href="over-ons.html" class="hover:text-theme-orange transition" data-i18n="nav_about">About us</a></li>
-                        <li><a href="contact.html" class="hover:text-theme-orange transition" data-i18n="nav_contact">Contact</a></li>
-                        <li><a href="#" class="hover:text-theme-orange transition" data-i18n="footer_partner">Partner with us</a></li>
+                        <li><a href="over-ons.html" class="hover:text-theme-orange transition"
+                                data-i18n="nav_about">About us</a></li>
+                        <li><a href="contact.html" class="hover:text-theme-orange transition"
+                                data-i18n="nav_contact">Contact</a></li>
+                        <li><a href="#" class="hover:text-theme-orange transition" data-i18n="footer_partner">Partner
+                                with us</a></li>
                     </ul>
                 </div>
 
                 <div>
                     <h3 class="font-bold text-xl mb-6 font-rambla" data-i18n="footer_programs">Programs</h3>
                     <ul class="space-y-4 text-gray-300 text-sm">
-                        <li><a href="#" class="hover:text-theme-orange transition" data-i18n="footer_hosp">Hospital Services</a></li>
-                        <li><a href="#" class="hover:text-theme-orange transition" data-i18n="footer_nurs">Nursing school</a></li>
-                        <li><a href="#" class="hover:text-theme-orange transition" data-i18n="footer_mobile">Mobile Clinic</a></li>
+                        <li><a href="#" class="hover:text-theme-orange transition" data-i18n="footer_hosp">Hospital
+                                Services</a></li>
+                        <li><a href="#" class="hover:text-theme-orange transition" data-i18n="footer_nurs">Nursing
+                                school</a></li>
+                        <li><a href="#" class="hover:text-theme-orange transition" data-i18n="footer_mobile">Mobile
+                                Clinic</a></li>
                     </ul>
                 </div>
 
                 <div>
                     <h3 class="font-bold text-xl mb-6 font-rambla" data-i18n="footer_support">Support</h3>
                     <ul class="space-y-4 text-gray-300 text-sm">
-                        <li><a href="#" class="hover:text-theme-orange transition" data-i18n="nav_donate">Donate</a></li>
-                        <li><a href="#" class="hover:text-theme-orange transition" data-i18n="footer_news">Newsletter</a></li>
-                        <li><a href="#" class="hover:text-theme-orange transition" data-i18n="footer_privacy">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-theme-orange transition" data-i18n="nav_donate">Donate</a>
+                        </li>
+                        <li><a href="#" class="hover:text-theme-orange transition"
+                                data-i18n="footer_news">Newsletter</a></li>
+                        <li><a href="#" class="hover:text-theme-orange transition" data-i18n="footer_privacy">Privacy
+                                Policy</a></li>
                         <li><a href="#" class="hover:text-theme-orange transition" data-i18n="footer_faq">FAQ</a></li>
                     </ul>
                 </div>
@@ -196,4 +361,5 @@
         });
     </script>
 </body>
+
 </html>
