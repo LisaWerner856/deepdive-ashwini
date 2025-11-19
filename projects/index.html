@@ -33,13 +33,14 @@
 <body class="font-sans text-gray-800 bg-gray-50 flex flex-col min-h-screen">
 
     <header class="bg-white py-4 shadow-sm fixed top-0 left-0 w-full z-50 h-36">
-        <div class="container mx-auto px-4 flex justify-between items-center h-full">
+        <div class="container mx-auto px-4 flex justify-between items-center h-full max-w-7xl">
 
             <div class="flex items-center gap-4">
-                <a href="/">
+                <a href="index.html">
                     <img src="./src/logo.svg" alt="AWF Logo" class="h-28 w-auto object-contain">
                 </a>
             </div>
+
             <div class="flex items-center gap-4">
 
                 <nav class="hidden md:block">
@@ -50,7 +51,7 @@
                     </ul>
                 </nav>
 
-                <div class="text-sm font-medium border-l pl-4 border-gray-300 hidden sm:block">
+                <div class="text-sm font-medium border-l pl-3 border-gray-300 hidden sm:block">
                     <span onclick="changeLanguage('nl')" class="lang-btn hover:text-orange-500" id="btn-nl">NL</span>
                     <span class="text-gray-400 mx-1">|</span>
                     <span onclick="changeLanguage('en')" class="lang-btn active hover:text-orange-500" id="btn-en">EN</span>
@@ -380,11 +381,18 @@
             const paymentTextElement = document.getElementById('payment-text');
             if (!paymentTextElement) return;
 
-            const currentLang = document.querySelector('.lang-btn.active').id.replace('btn-', '').replace('-mobile', '');
+            const activeLangElement = document.querySelector('.lang-btn.active');
+            let currentLang = 'en';
+            if (activeLangElement) {
+                 currentLang = activeLangElement.id.replace('btn-', '').replace('-mobile', '');
+            }
+
+            const langData = translations[currentLang] || translations['en'];
+
             if (freq === 'monthly') {
-                paymentTextElement.textContent = translations[currentLang].pay_auth_monthly;
+                paymentTextElement.textContent = langData.pay_auth_monthly;
             } else {
-                paymentTextElement.textContent = translations[currentLang].pay_auth_once;
+                paymentTextElement.textContent = langData.pay_auth_once;
             }
         }
 

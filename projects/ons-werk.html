@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="page_contact_title">Contact - AWF</title>
+    <title>Our Work - AWF</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -16,8 +16,11 @@
         .bg-theme-orange { background-color: #FFB766; }
         .text-theme-orange { color: #E67E22; }
         .text-theme-brown { color: #A04000; }
+        .border-theme-brown { border-color: #C05010; }
         .btn-orange { background-color: #FF8C00; }
         .btn-orange:hover { background-color: #E67E00; }
+        .bg-brand-active { background-color: #E67E22; }
+        .bg-brand-light { background-color: #FFF0E0; }
         .font-rambla { font-family: 'Rambla', sans-serif; }
         .lang-btn.active { font-weight: bold; text-decoration: underline; color: #E67E22; }
         .lang-btn { cursor: pointer; }
@@ -76,73 +79,16 @@
     </header>
 
     <main class="mt-36 flex-grow py-16 bg-gray-50">
-        <div class="container mx-auto px-4 max-w-6xl">
+        <div class="container mx-auto px-4 max-w-4xl">
 
-            <h1 class="font-rambla text-5xl text-gray-800 font-bold mb-4" data-i18n="contact_title">Contact Us</h1>
-            <p class="text-lg text-gray-600 mb-12" data-i18n="contact_subtitle">
-                We are happy to help you with your questions, donations, or partnerships.
-            </p>
+            <h1 class="font-rambla text-4xl text-theme-orange font-bold mb-8">
+                TITEL
+            </h1>
 
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
-
-                <div class="lg:col-span-1 bg-white p-8 rounded-xl shadow-lg h-full">
-                    <h2 class="font-rambla text-2xl text-theme-orange font-bold mb-6" data-i18n="info_heading">Our Details</h2>
-
-                    <div class="space-y-6">
-                        <div>
-                            <p class="font-bold text-gray-800" data-i18n="info_address_label">Headquarters Address:</p>
-                            <p class="text-gray-600">
-                                Ashwini Welfare Foundation<br>
-                                Straat 123<br>
-                                1234 AB Plaats, Land
-                            </p>
-                            </div>
-                        <div>
-                            <p class="font-bold text-gray-800" data-i18n="info_email_label">Email:</p>
-                            <a href="mailto:info@ashwini.org" class="text-theme-orange hover:underline">info@ashwini.nl</a>
-                        </div>
-                        <div>
-                            <p class="font-bold text-gray-800" data-i18n="info_phone_label">Phone:</p>
-                            <p class="text-gray-600">[+XX XXXX XXXXXX]</p>
-                            </div>
-                    </div>
-
-                    <div class="mt-10 pt-6 border-t border-gray-200">
-                        <h3 class="font-bold text-lg mb-2" data-i18n="info_nl_support">Dutch Support Foundation:</h3>
-                        <p class="text-sm text-gray-600">
-                            Ashwini Welfare Foundation<br>
-                            IBAN: [NLXX XXXX XXXX XXXX]<br>
-                            KVK: [XXXXXXX]
-                        </p>
-                    </div>
-
-                </div>
-
-                <div class="lg:col-span-2 bg-white p-8 rounded-xl shadow-lg border-t-4 border-theme-orange">
-                    <h2 class="font-rambla text-2xl text-gray-800 font-bold mb-6" data-i18n="form_heading">Send us a message</h2>
-
-                    <form action="#" method="POST" class="space-y-6">
-                        <div>
-                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1" data-i18n="form_name_label">Full Name*</label>
-                            <input type="text" id="name" name="name" required class="w-full border border-gray-300 rounded p-3 focus:outline-none focus:border-theme-orange focus:ring-1 focus:ring-theme-orange transition">
-                        </div>
-                        <div>
-                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1" data-i18n="form_email_label">Email Address*</label>
-                            <input type="email" id="email" name="email" required class="w-full border border-gray-300 rounded p-3 focus:outline-none focus:border-theme-orange focus:ring-1 focus:ring-theme-orange transition">
-                        </div>
-                        <div>
-                            <label for="subject" class="block text-sm font-medium text-gray-700 mb-1" data-i18n="form_subject_label">Subject</label>
-                            <input type="text" id="subject" name="subject" class="w-full border border-gray-300 rounded p-3 focus:outline-none focus:border-theme-orange focus:ring-1 focus:ring-theme-orange transition">
-                        </div>
-                        <div>
-                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1" data-i18n="form_message_label">Your Message*</label>
-                            <textarea id="message" name="message" rows="5" required class="w-full border border-gray-300 rounded p-3 focus:outline-none focus:border-theme-orange focus:ring-1 focus:ring-theme-orange transition"></textarea>
-                        </div>
-                        <button type="submit" class="btn-orange text-white font-bold py-3 px-6 rounded-lg shadow-md hover:shadow-lg transition uppercase tracking-wide" data-i18n="form_submit_btn">
-                            Send Message
-                        </button>
-                    </form>
-                </div>
+            <div class="prose max-w-none text-gray-700 leading-relaxed">
+                <p>
+                    INHOUD
+                </p>
             </div>
 
         </div>
@@ -205,47 +151,19 @@
         const translations = {
             en: {
                 nav_about: "About us", nav_work: "Our work", nav_contact: "Contact", nav_donate: "Donate",
+
                 footer_org: "Organization", footer_partner: "Partner with us",
                 footer_programs: "Programs", footer_hosp: "Hospital Services", footer_nurs: "Nursing school", footer_mobile: "Mobile Clinic",
                 footer_support: "Support", footer_news: "Newsletter", footer_privacy: "Privacy Policy", footer_faq: "FAQ",
-                footer_rights: "2025 ASHWINI. All rights reserved.", footer_registered: "A Registered Charitable Society",
-
-                page_contact_title: "Contact - AWF",
-                contact_title: "Contact Us",
-                contact_subtitle: "We are happy to help you with your questions, donations, or partnerships.",
-                info_heading: "Our Details",
-                info_address_label: "Address:",
-                info_email_label: "Email:",
-                info_phone_label: "Phone:",
-                info_nl_support: "Dutch Support Foundation:",
-                form_heading: "Send us a message",
-                form_name_label: "Full Name*",
-                form_email_label: "Email Address*",
-                form_subject_label: "Subject",
-                form_message_label: "Your Message*",
-                form_submit_btn: "Send Message"
+                footer_rights: "2025 ASHWINI. All rights reserved.", footer_registered: "A Registered Charitable Society"
             },
             nl: {
                 nav_about: "Over ons", nav_work: "Ons werk", nav_contact: "Contact", nav_donate: "Doneer",
-                footer_org: "Organisatie", footer_annual: "Jaarverslag", footer_partner: "Partner worden",
-                footer_programs: "Programma's", footer_hosp: "Ziekenhuisdiensten", footer_nurs: "Verpleegschool", footer_mobile: "Mobiele Kliniek", footer_disability: "Gehandicaptenzorg",
-                footer_support: "Steun ons", footer_news: "Nieuwsbrief", footer_privacy: "Privacybeleid", footer_faq: "Veelgestelde vragen",
-                footer_rights: "2025 ASHWINI. Alle rechten voorbehouden.", footer_registered: "Een Geregistreerde Liefdadigheidsinstelling",
 
-                page_contact_title: "Contact - AWF",
-                contact_title: "Neem Contact op",
-                contact_subtitle: "We helpen u graag verder met vragen, donaties of partnerschappen.",
-                info_heading: "Onze Gegevens",
-                info_address_label: "Adres:",
-                info_email_label: "E-mail:",
-                info_phone_label: "Telefoon:",
-                info_nl_support: "Nederlandse Steunstichting:",
-                form_heading: "Stuur ons een bericht",
-                form_name_label: "Volledige Naam*",
-                form_email_label: "E-mailadres*",
-                form_subject_label: "Onderwerp",
-                form_message_label: "Uw Bericht*",
-                form_submit_btn: "Verstuur Bericht"
+                footer_org: "Organisatie", footer_partner: "Partner worden",
+                footer_programs: "Programma's", footer_hosp: "Ziekenhuisdiensten", footer_nurs: "Verpleegschool", footer_mobile: "Mobiele Kliniek",
+                footer_support: "Steun ons", footer_news: "Nieuwsbrief", footer_privacy: "Privacybeleid", footer_faq: "Veelgestelde vragen",
+                footer_rights: "2025 ASHWINI. Alle rechten voorbehouden.", footer_registered: "Een Geregistreerde Liefdadigheidsinstelling"
             }
         };
 
@@ -258,15 +176,10 @@
             const elements = document.querySelectorAll('[data-i18n]');
             elements.forEach(element => {
                 const key = element.getAttribute('data-i18n');
-                if (translations[lang] && translations[lang][key]) {
-                    if (element.tagName === 'TITLE') {
-                        document.title = translations[lang][key];
-                    } else {
-                        element.innerHTML = translations[lang][key];
-                    }
+                if (translations[lang][key]) {
+                    element.innerHTML = translations[lang][key];
                 }
             });
-
             const langButtons = document.querySelectorAll('.lang-btn');
             langButtons.forEach(btn => btn.classList.remove('active'));
             document.getElementById('btn-nl').classList.toggle('active', lang === 'nl');

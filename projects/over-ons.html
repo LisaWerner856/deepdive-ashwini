@@ -28,23 +28,25 @@
 <body class="font-sans text-gray-800 bg-gray-50 flex flex-col min-h-screen">
 
     <header class="bg-white py-4 shadow-sm fixed top-0 left-0 w-full z-50 h-36">
-        <div class="container mx-auto px-4 flex justify-between items-center h-full">
+        <div class="container mx-auto px-4 flex justify-between items-center h-full max-w-7xl">
 
             <div class="flex items-center gap-4">
                 <a href="index.html">
                     <img src="./src/logo.svg" alt="AWF Logo" class="h-28 w-auto object-contain">
                 </a>
             </div>
+
             <div class="flex items-center gap-4">
+
                 <nav class="hidden md:block">
                     <ul class="flex gap-8 text-gray-800 font-medium text-sm">
-                        <li><a href="over-ons.html" class="hover:text-orange-500 active:text-orange-500" data-i18n="nav_about">About us</a></li>
+                        <li><a href="over-ons.html" class="hover:text-orange-500" data-i18n="nav_about">About us</a></li>
                         <li><a href="ons-werk.html" class="hover:text-orange-500" data-i18n="nav_work">Our work</a></li>
                         <li><a href="contact.html" class="hover:text-orange-500" data-i18n="nav_contact">Contact</a></li>
                     </ul>
                 </nav>
 
-                <div class="text-sm font-medium border-l pl-4 border-gray-300 hidden sm:block">
+                <div class="text-sm font-medium border-l pl-3 border-gray-300 hidden sm:block">
                     <span onclick="changeLanguage('nl')" class="lang-btn hover:text-orange-500" id="btn-nl">NL</span>
                     <span class="text-gray-400 mx-1">|</span>
                     <span onclick="changeLanguage('en')" class="lang-btn active hover:text-orange-500" id="btn-en">EN</span>
@@ -70,6 +72,7 @@
                 </li>
             </ul>
         </div>
+
     </header>
 
     <main class="mt-36 flex-grow bg-white">
@@ -149,7 +152,6 @@
                     <h3 class="font-bold text-xl mb-6 font-rambla" data-i18n="footer_org">Organization</h3>
                     <ul class="space-y-4 text-gray-300 text-sm">
                         <li><a href="over-ons.html" class="hover:text-theme-orange transition" data-i18n="nav_about">About us</a></li>
-                        <li><a href="#" class="hover:text-theme-orange transition" data-i18n="footer_annual">Annual Report</a></li>
                         <li><a href="contact.html" class="hover:text-theme-orange transition" data-i18n="nav_contact">Contact</a></li>
                         <li><a href="#" class="hover:text-theme-orange transition" data-i18n="footer_partner">Partner with us</a></li>
                     </ul>
@@ -161,7 +163,6 @@
                         <li><a href="#" class="hover:text-theme-orange transition" data-i18n="footer_hosp">Hospital Services</a></li>
                         <li><a href="#" class="hover:text-theme-orange transition" data-i18n="footer_nurs">Nursing school</a></li>
                         <li><a href="#" class="hover:text-theme-orange transition" data-i18n="footer_mobile">Mobile Clinic</a></li>
-                        <li><a href="#" class="hover:text-theme-orange transition" data-i18n="footer_disability">Disability Services</a></li>
                     </ul>
                 </div>
 
@@ -194,7 +195,7 @@
         const translations = {
             en: {
                 nav_about: "About us", nav_work: "Our work", nav_contact: "Contact", nav_donate: "Donate",
-                footer_org: "Organization", footer_annual: "Annual Report", footer_partner: "Partner with us",
+                footer_org: "Organization", footer_partner: "Partner with us",
                 footer_programs: "Programs", footer_hosp: "Hospital Services", footer_nurs: "Nursing school", footer_mobile: "Mobile Clinic", footer_disability: "Disability Services",
                 footer_support: "Support", footer_news: "Newsletter", footer_privacy: "Privacy Policy", footer_faq: "FAQ",
                 footer_rights: "2025 ASHWINI. All rights reserved.", footer_registered: "A Registered Charitable Society",
