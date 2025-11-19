@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="proj_title">Sickle Cell Centre - AWF</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rambla:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        .bg-theme-orange { background-color: #FFB766; }
+        .text-theme-orange { color: #E67E22; }
+        .text-theme-brown { color: #A04000; }
+        .border-theme-brown { border-color: #C05010; }
+        .btn-orange { background-color: #FF8C00; }
+        .btn-orange:hover { background-color: #E67E00; }
+        .bg-brand-active { background-color: #E67E22; }
+        .bg-brand-light { background-color: #FFF0E0; }
+        .font-rambla { font-family: 'Rambla', sans-serif; }
+        .lang-btn.active { font-weight: bold; text-decoration: underline; color: #E67E22; }
+        .lang-btn { cursor: pointer; }
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+
+<body class="font-sans text-gray-800 bg-gray-50 flex flex-col min-h-screen">
+
+    <header class="bg-white py-4 shadow-sm fixed top-0 left-0 w-full z-50 h-24 md:h-36 transition-all duration-300">
+        <div class="container mx-auto px-4 md:px-16 lg:px-24 flex justify-between items-center h-full">
+            <div class="flex items-center gap-4">
+                <a href="index.html">
+                    <img src="./src/logo.svg" alt="AWF Logo" class="h-16 md:h-28 w-auto object-contain">
+                </a>
+            </div>
+            <div class="flex items-center gap-4">
+                <nav class="hidden md:block">
+                    <ul class="flex gap-8 text-gray-800 font-medium text-sm">
+                        <li><a href="over-ons.html" class="hover:text-theme-orange" data-i18n="nav_about">About us</a></li>
+                        <li><a href="ons-werk.html" class="hover:text-theme-orange active:text-theme-orange" data-i18n="nav_work">Our work</a></li>
+                        <li><a href="contact.html" class="hover:text-theme-orange" data-i18n="nav_contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="text-sm font-medium border-l pl-3 border-gray-300 hidden sm:block">
+                    <span onclick="changeLanguage('nl')" class="lang-btn hover:text-theme-orange" id="btn-nl">NL</span>
+                    <span class="text-gray-400 mx-1">|</span>
+                    <span onclick="changeLanguage('en')" class="lang-btn active hover:text-theme-orange" id="btn-en">EN</span>
+                </div>
+                <button id="mobile-menu-button" onclick="toggleMobileMenu()" class="md:hidden p-2 text-gray-800">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white px-4 pt-2 pb-4 border-t border-gray-100 absolute top-24 left-0 w-full shadow-md">
+            <ul class="flex flex-col gap-3 text-gray-800 font-medium text-base">
+                <li><a href="over-ons.html" class="hover:text-theme-orange block py-1" data-i18n="nav_about">About us</a></li>
+                <li><a href="ons-werk.html" class="hover:text-theme-orange block py-1" data-i18n="nav_work">Our work</a></li>
+                <li><a href="contact.html" class="hover:text-theme-orange block py-1" data-i18n="nav_contact">Contact</a></li>
+                <li class="pt-2 border-t border-gray-100">
+                    <div class="text-sm font-medium">
+                        <span onclick="changeLanguage('nl')" class="lang-btn hover:text-theme-orange" id="btn-nl-mobile">NL</span>
+                        <span class="text-gray-400 mx-1">|</span>
+                        <span onclick="changeLanguage('en')" class="lang-btn active hover:text-theme-orange" id="btn-en-mobile">EN</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="mt-24 md:mt-36 flex-grow bg-white">
+
+        <div class="relative h-80 md:h-[500px] w-full overflow-hidden">
+            <div class="absolute inset-0 bg-cover bg-center"
+                style="background-image: url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/attachments/gen-images/public/healthcare-laboratory-testing-JNxkvMg67LU4YWzuDAHxFzl9HNM9iN.jpg');">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+            </div>
+
+            <div class="absolute bottom-0 left-0 w-full p-6 md:p-12 container mx-auto px-4 md:px-16 lg:px-24">
+                <span class="inline-block bg-theme-orange text-white text-xs md:text-sm font-bold px-3 py-1 rounded-full mb-3 uppercase tracking-wider" data-i18n="proj_country">
+                    Gudalur Hospital
+                </span>
+                <h1 class="font-rambla text-4xl md:text-6xl text-white font-bold leading-tight" data-i18n="proj_title">
+                    Sickle Cell Centre
+                </h1>
+            </div>
+        </div>
+
+        <div class="container mx-auto px-4 md:px-16 lg:px-24 py-12 md:py-16">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+
+                <div class="lg:col-span-2">
+                    <h2 class="font-rambla text-3xl text-gray-800 font-bold mb-6" data-i18n="proj_about_heading">About the Sickle Cell Centre</h2>
+                    <div class="prose max-w-none text-gray-700 text-lg leading-relaxed">
+                        <p data-i18n="proj_description_1">
+                            Lorem ipsum dolor sit amet. Sit quia necessitatibus hic Quis aspernatur est nemo ratione ad veritatis facere rem possimus repellat sed impedit voluptates. Qui dicta quia qui voluptatem fugit aut inventore voluptate et consequatur suscipit non debitis ipsa ex labore mollitia quo voluptatem galisum. Ad sequi tempora aut tenetur sint ut ullam cupiditate et animi recusandae eos sint harum ea dolorem officiis et natus quam.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-1 space-y-8">
+
+                    <div class="bg-brand-light border border-orange-200 p-6 rounded-xl shadow-sm">
+                        <h3 class="font-rambla text-xl text-theme-orange font-bold mb-4 flex items-center gap-2">
+                            <i class="fa-solid fa-check-circle"></i>
+                            <span data-i18n="proj_impact_heading">Key Services</span>
+                        </h3>
+                        <ul class="space-y-3 text-gray-700 text-sm">
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-caret-right text-theme-orange mt-1"></i>
+                                <span data-i18n="proj_impact_1">Free diagnostic screening for local communities</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-caret-right text-theme-orange mt-1"></i>
+                                <span data-i18n="proj_impact_2">Counseling and pain management for patients</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-caret-right text-theme-orange mt-1"></i>
+                                <span data-i18n="proj_impact_3">Epidemiological data collection for research</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="text-center bg-gray-900 p-8 rounded-xl shadow-lg">
+                        <p class="text-white mb-4 font-medium" data-i18n="proj_donate_text">
+                            Help us provide essential medicine and management for Sickle Cell patients.
+                        </p>
+                        <a href="index.html#donation-form" class="btn-orange text-white font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transition uppercase tracking-wide w-full block">
+                            <span data-i18n="hero_btn">Donate Now</span>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="bg-gray-900 text-white pt-16 pb-8 mt-auto text-left">
+        <div class="container mx-auto px-4 md:px-16 lg:px-24">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div class="flex flex-col items-start">
+                    <div class="mt-0 md:-mt-8 transition-all">
+                        <img src="./src/logo-footer.svg" alt="Ashwini Logo" class="h-20 md:h-28 w-auto">
+                    </div>
+                </div>
+                <div>
+                    <h3 class="font-bold text-xl mb-6 font-rambla" data-i18n="footer_org">Organization</h3>
+                    <ul class="space-y-4 text-gray-300 text-sm">
+                        <li><a href="over-ons.html" class="hover:text-theme-orange transition" data-i18n="nav_about">About us</a></li>
+                        <li><a href="contact.html" class="hover:text-theme-orange transition" data-i18n="nav_contact">Contact</a></li>
+                        <li><a href="#" class="hover:text-theme-orange transition" data-i18n="footer_partner">Partner with us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-xl mb-6 font-rambla" data-i18n="footer_programs">Programs</h3>
+                    <ul class="space-y-4 text-gray-300 text-sm">
+                        <li><a href="ziekenhuis.html" class="hover:text-theme-orange transition" data-i18n="footer_hosp">Hospital</a></li>
+                        <li><a href="school.html" class="hover:text-theme-orange transition" data-i18n="footer_nurs">Nursing school</a></li>
+                        <li><a href="centrum.html" class="hover:text-theme-orange transition" data-i18n="footer_mobile">Sickle Cell Centre</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-xl mb-6 font-rambla" data-i18n="footer_support">Support</h3>
+                    <ul class="space-y-4 text-gray-300 text-sm">
+                        <li><a href="index.html#donation-form" class="hover:text-theme-orange transition" data-i18n="nav_donate">Donate</a></li>
+                        <li><a href="#" class="hover:text-theme-orange transition" data-i18n="footer_news">Newsletter</a></li>
+                        <li><a href="#" class="hover:text-theme-orange transition" data-i18n="footer_privacy">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-theme-orange transition" data-i18n="footer_faq">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="border-gray-700 my-8">
+            <div class="flex flex-col md:flex-row justify-between items-center text-sm text-theme-orange font-medium">
+                <div class="flex items-center gap-2 mb-4 md:mb-0">
+                    <i class="fa-regular fa-copyright"></i>
+                    <span data-i18n="footer_rights">2025 ASHWINI. All rights reserved.</span>
+                </div>
+                <div data-i18n="footer_registered">A Registered Charitable Society</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const translations = {
+            en: {
+                nav_about: "About us", nav_work: "Our work", nav_contact: "Contact", nav_donate: "Donate", hero_btn: "Donate Now",
+                footer_org: "Organization", footer_annual: "Annual Report", footer_partner: "Partner with us",
+                footer_programs: "Programs", footer_hosp: "Hospital Services", footer_nurs: "Nursing school", footer_mobile: "Mobile Clinic", footer_disability: "Disability Services",
+                footer_support: "Support", footer_news: "Newsletter", footer_privacy: "Privacy Policy", footer_faq: "FAQ",
+                footer_rights: "2025 ASHWINI. All rights reserved.", footer_registered: "A Registered Charitable Society",
+
+                proj_title: "Sickle Cell Centre",
+                proj_country: "Gudalur Hospital",
+                proj_about_heading: "About the Sickle Cell Centre",
+                proj_impact_heading: "Key Services",
+                proj_impact_1: "Free diagnostic screening for local communities",
+                proj_impact_2: "Counseling and pain management for patients",
+                proj_impact_3: "Epidemiological data collection for research",
+                proj_donate_text: "Help us provide essential medicine and management for Sickle Cell patients."
+            },
+            nl: {
+                nav_about: "Over ons", nav_work: "Ons werk", nav_contact: "Contact", nav_donate: "Doneer", hero_btn: "Doneer Nu",
+                footer_org: "Organisatie", footer_annual: "Jaarverslag", footer_partner: "Partner worden",
+                footer_programs: "Programma's", footer_hosp: "Ziekenhuisdiensten", footer_nurs: "Verpleegschool", footer_mobile: "Mobiele Kliniek", footer_disability: "Gehandicaptenzorg",
+                footer_support: "Steun ons", footer_news: "Nieuwsbrief", footer_privacy: "Privacybeleid", footer_faq: "Veelgestelde vragen",
+                footer_rights: "2025 ASHWINI. Alle rechten voorbehouden.", footer_registered: "Een Geregistreerde Liefdadigheidsinstelling",
+
+                proj_title: "Sikkelcel Centrum",
+                proj_country: "Gudalur Ziekenhuis",
+                proj_about_heading: "Over het Sikkelcel Centrum",
+                proj_impact_heading: "Belangrijkste Diensten",
+                proj_impact_1: "Gratis diagnostische screening voor lokale gemeenschappen",
+                proj_impact_2: "Counseling en pijnbestrijding voor patiënten",
+                proj_impact_3: "Verzameling van epidemiologische gegevens voor onderzoek",
+                proj_donate_text: "Help ons bij het leveren van essentiële medicatie en management voor Sikkelcel patiënten."
+            }
+        };
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        function changeLanguage(lang) {
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    if (element.tagName === 'TITLE') {
+                        document.title = translations[lang][key];
+                    } else {
+                        element.innerHTML = translations[lang][key];
+                    }
+                }
+            });
+            const langButtons = document.querySelectorAll('.lang-btn');
+            langButtons.forEach(btn => btn.classList.remove('active'));
+            document.getElementById('btn-nl').classList.toggle('active', lang === 'nl');
+            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+
+            const btnNlMobile = document.getElementById('btn-nl-mobile');
+            const btnEnMobile = document.getElementById('btn-en-mobile');
+            if (btnNlMobile) btnNlMobile.classList.toggle('active', lang === 'nl');
+            if (btnEnMobile) btnEnMobile.classList.toggle('active', lang === 'en');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            changeLanguage('en');
+        });
+    </script>
+</body>
+</html>

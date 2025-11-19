@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="page_about_title">About Us - AWF</title>
+    <title data-i18n="proj_title">School of Nursing - AWF</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -16,8 +16,11 @@
         .bg-theme-orange { background-color: #FFB766; }
         .text-theme-orange { color: #E67E22; }
         .text-theme-brown { color: #A04000; }
+        .border-theme-brown { border-color: #C05010; }
         .btn-orange { background-color: #FF8C00; }
         .btn-orange:hover { background-color: #E67E00; }
+        .bg-brand-active { background-color: #E67E22; }
+        .bg-brand-light { background-color: #FFF0E0; }
         .font-rambla { font-family: 'Rambla', sans-serif; }
         .lang-btn.active { font-weight: bold; text-decoration: underline; color: #E67E22; }
         .lang-btn { cursor: pointer; }
@@ -27,127 +30,123 @@
 
 <body class="font-sans text-gray-800 bg-gray-50 flex flex-col min-h-screen">
 
-    <header class="bg-white py-4 shadow-sm fixed top-0 left-0 w-full z-50 h-36">
-        <div class="container mx-auto px-4 flex justify-between items-center h-full max-w-7xl">
-
+    <header class="bg-white py-4 shadow-sm fixed top-0 left-0 w-full z-50 h-24 md:h-36 transition-all duration-300">
+        <div class="container mx-auto px-4 md:px-16 lg:px-24 flex justify-between items-center h-full">
             <div class="flex items-center gap-4">
                 <a href="index.html">
-                    <img src="./src/logo.svg" alt="AWF Logo" class="h-28 w-auto object-contain">
+                    <img src="./src/logo.svg" alt="AWF Logo" class="h-16 md:h-28 w-auto object-contain">
                 </a>
             </div>
-
             <div class="flex items-center gap-4">
-
                 <nav class="hidden md:block">
                     <ul class="flex gap-8 text-gray-800 font-medium text-sm">
-                        <li><a href="over-ons.html" class="hover:text-orange-500" data-i18n="nav_about">About us</a></li>
-                        <li><a href="ons-werk.html" class="hover:text-orange-500" data-i18n="nav_work">Our work</a></li>
-                        <li><a href="contact.html" class="hover:text-orange-500" data-i18n="nav_contact">Contact</a></li>
+                        <li><a href="over-ons.html" class="hover:text-theme-orange" data-i18n="nav_about">About us</a></li>
+                        <li><a href="ons-werk.html" class="hover:text-theme-orange active:text-theme-orange" data-i18n="nav_work">Our work</a></li>
+                        <li><a href="contact.html" class="hover:text-theme-orange" data-i18n="nav_contact">Contact</a></li>
                     </ul>
                 </nav>
-
                 <div class="text-sm font-medium border-l pl-3 border-gray-300 hidden sm:block">
-                    <span onclick="changeLanguage('nl')" class="lang-btn hover:text-orange-500" id="btn-nl">NL</span>
+                    <span onclick="changeLanguage('nl')" class="lang-btn hover:text-theme-orange" id="btn-nl">NL</span>
                     <span class="text-gray-400 mx-1">|</span>
-                    <span onclick="changeLanguage('en')" class="lang-btn active hover:text-orange-500" id="btn-en">EN</span>
+                    <span onclick="changeLanguage('en')" class="lang-btn active hover:text-theme-orange" id="btn-en">EN</span>
                 </div>
-
                 <button id="mobile-menu-button" onclick="toggleMobileMenu()" class="md:hidden p-2 text-gray-800">
-                    <i class="fa-solid fa-bars text-xl"></i>
+                    <i class="fa-solid fa-bars text-2xl"></i>
                 </button>
             </div>
         </div>
-
-        <div id="mobile-menu" class="hidden md:hidden bg-white px-4 pt-2 pb-4 border-t border-gray-100 absolute top-36 left-0 w-full shadow-md">
+        <div id="mobile-menu" class="hidden md:hidden bg-white px-4 pt-2 pb-4 border-t border-gray-100 absolute top-24 left-0 w-full shadow-md">
             <ul class="flex flex-col gap-3 text-gray-800 font-medium text-base">
-                <li><a href="over-ons.html" class="hover:text-orange-500 block py-1" data-i18n="nav_about">About us</a></li>
-                <li><a href="ons-werk.html" class="hover:text-orange-500 block py-1" data-i18n="nav_work">Our work</a></li>
-                <li><a href="contact.html" class="hover:text-orange-500 block py-1" data-i18n="nav_contact">Contact</a></li>
+                <li><a href="over-ons.html" class="hover:text-theme-orange block py-1" data-i18n="nav_about">About us</a></li>
+                <li><a href="ons-werk.html" class="hover:text-theme-orange block py-1" data-i18n="nav_work">Our work</a></li>
+                <li><a href="contact.html" class="hover:text-theme-orange block py-1" data-i18n="nav_contact">Contact</a></li>
                 <li class="pt-2 border-t border-gray-100">
                     <div class="text-sm font-medium">
-                        <span onclick="changeLanguage('nl')" class="lang-btn hover:text-orange-500" id="btn-nl-mobile">NL</span>
+                        <span onclick="changeLanguage('nl')" class="lang-btn hover:text-theme-orange" id="btn-nl-mobile">NL</span>
                         <span class="text-gray-400 mx-1">|</span>
-                        <span onclick="changeLanguage('en')" class="lang-btn active hover:text-orange-500" id="btn-en-mobile">EN</span>
+                        <span onclick="changeLanguage('en')" class="lang-btn active hover:text-theme-orange" id="btn-en-mobile">EN</span>
                     </div>
                 </li>
             </ul>
         </div>
-
     </header>
 
-    <main class="mt-36 flex-grow bg-white">
+    <main class="mt-24 md:mt-36 flex-grow bg-white">
 
-        <div class="bg-theme-orange py-16">
-            <div class="container mx-auto px-4 max-w-6xl">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                    <div>
-                        <h1 class="font-rambla text-5xl text-white font-bold mb-4" data-i18n="about_title">About Ashwini</h1>
-                        <p class="text-xl text-white font-light" data-i18n="about_intro">
-                            wWe have been committed to empowering marginalized communities through health and education.
-                        </p>
-                    </div>
-                    <div class="hidden md:block bg-gray-400 h-64 w-full rounded-lg placeholder-style flex items-center justify-center text-white text-lg">
-                        [Image Placeholder 1]
-                    </div>
-                </div>
+        <div class="relative h-80 md:h-[500px] w-full overflow-hidden">
+            <div class="absolute inset-0 bg-cover bg-center"
+                style="background-image: url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/attachments/gen-images/public/nursing-school-training-ZYy8dsur3qRVwy7RbxRjR3F5tFvFEM.jpg');">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+            </div>
+
+            <div class="absolute bottom-0 left-0 w-full p-6 md:p-12 container mx-auto px-4 md:px-16 lg:px-24">
+                <span class="inline-block bg-theme-orange text-white text-xs md:text-sm font-bold px-3 py-1 rounded-full mb-3 uppercase tracking-wider" data-i18n="proj_country">
+                    India (Nilgiris District)
+                </span>
+                <h1 class="font-rambla text-4xl md:text-6xl text-white font-bold leading-tight" data-i18n="proj_title">
+                    School of Nursing
+                </h1>
             </div>
         </div>
 
-        <div class="py-16 bg-gray-50">
-            <div class="container mx-auto px-4 max-w-6xl">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div class="container mx-auto px-4 md:px-16 lg:px-24 py-12 md:py-16">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
 
-                    <div class="p-6 bg-white rounded-xl shadow-lg border-t-4 border-theme-orange">
-                        <i class="fa-solid fa-bullseye text-4xl text-theme-orange mb-4"></i>
-                        <h2 class="font-rambla text-3xl text-gray-800 font-bold mb-4" data-i18n="mission_title">Our Mission</h2>
-                        <p class="text-gray-600 leading-relaxed" data-i18n="mission_text">
-                            To provide comprehensive, accessible, and compassionate healthcare and educational opportunities to the most vulnerable populations in rural areas. We focus on long-term sustainable development and community independence.
-                        </p>
-                    </div>
-
-                    <div class="p-6 bg-white rounded-xl shadow-lg border-t-4 border-theme-orange">
-                        <i class="fa-solid fa-eye text-4xl text-theme-orange mb-4"></i>
-                        <h2 class="font-rambla text-3xl text-gray-800 font-bold mb-4" data-i18n="vision_title">Our Vision</h2>
-                        <p class="text-gray-600 leading-relaxed" data-i18n="vision_text">
-                            A world where every individual, regardless of their social or economic background, has access to basic human rights, especially quality healthcare and education, enabling them to lead healthy and fulfilling lives.
+                <div class="lg:col-span-2">
+                    <h2 class="font-rambla text-3xl text-gray-800 font-bold mb-6" data-i18n="proj_about_heading">About the Nursing School</h2>
+                    <div class="prose max-w-none text-gray-700 text-lg leading-relaxed">
+                        <p data-i18n="proj_description_1">
+                            Lorem ipsum dolor sit amet. Sit quia necessitatibus hic Quis aspernatur est nemo ratione ad veritatis facere rem possimus repellat sed impedit voluptates. Qui dicta quia qui voluptatem fugit aut inventore voluptate et consequatur suscipit non debitis ipsa ex labore mollitia quo voluptatem galisum. Ad sequi tempora aut tenetur sint ut ullam cupiditate et animi recusandae eos sint harum ea dolorem officiis et natus quam.
                         </p>
                     </div>
                 </div>
-            </div>
-        </div>
 
-        <div class="py-16">
-            <div class="container mx-auto px-4 max-w-6xl">
+                <div class="lg:col-span-1 space-y-8">
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center mb-12">
-                    <div class="md:col-span-2 prose max-w-none">
-                        <h3 class="font-rambla text-3xl text-theme-orange font-bold mb-4" data-i18n="history_title">Our History</h3>
-                        <p class="text-gray-700" data-i18n="history_p1">
-                            Founded in 1989 by a group of passionate doctors, Ashwini started as a small mobile clinic addressing urgent health needs in remote villages. Our growth has been fueled by the unwavering support of local communities and international partners.
-                        </p>
-                        <p class="text-gray-700" data-i18n="history_p2">
-                        </p>
+                    <div class="bg-brand-light border border-orange-200 p-6 rounded-xl shadow-sm">
+                        <h3 class="font-rambla text-xl text-theme-orange font-bold mb-4 flex items-center gap-2">
+                            <i class="fa-solid fa-check-circle"></i>
+                            <span data-i18n="proj_impact_heading">Key Achievements</span>
+                        </h3>
+                        <ul class="space-y-3 text-gray-700 text-sm">
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-caret-right text-theme-orange mt-1"></i>
+                                <span data-i18n="proj_impact_1">150+ graduates since inception</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-caret-right text-theme-orange mt-1"></i>
+                                <span data-i18n="proj_impact_2">100% employment rate for graduates</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-caret-right text-theme-orange mt-1"></i>
+                                <span data-i18n="proj_impact_3">Provides essential healthcare staff for the region</span>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="bg-gray-200 h-64 w-full rounded-lg hidden md:block placeholder-style flex items-center justify-center text-gray-600 text-lg">
-                        [Image Placeholder 2]
+
+                    <div class="text-center bg-gray-900 p-8 rounded-xl shadow-lg">
+                        <p class="text-white mb-4 font-medium" data-i18n="proj_donate_text">
+                            Invest in education and a healthy future for the tribal youth. Support a student now.
+                        </p>
+                        <a href="index.html#donation-form" class="btn-orange text-white font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transition uppercase tracking-wide w-full block">
+                            <span data-i18n="hero_btn">Donate Now</span>
+                        </a>
                     </div>
+
                 </div>
-
             </div>
         </div>
 
     </main>
 
-   <footer class="bg-gray-900 text-white pt-16 pb-8 mt-auto text-left">
+    <footer class="bg-gray-900 text-white pt-16 pb-8 mt-auto text-left">
         <div class="container mx-auto px-4 md:px-16 lg:px-24">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-
                 <div class="flex flex-col items-start">
                     <div class="mt-0 md:-mt-8 transition-all">
                         <img src="./src/logo-footer.svg" alt="Ashwini Logo" class="h-20 md:h-28 w-auto">
                     </div>
                 </div>
-
                 <div>
                     <h3 class="font-bold text-xl mb-6 font-rambla" data-i18n="footer_org">Organization</h3>
                     <ul class="space-y-4 text-gray-300 text-sm">
@@ -156,7 +155,6 @@
                         <li><a href="#" class="hover:text-theme-orange transition" data-i18n="footer_partner">Partner with us</a></li>
                     </ul>
                 </div>
-
                 <div>
                     <h3 class="font-bold text-xl mb-6 font-rambla" data-i18n="footer_programs">Programs</h3>
                     <ul class="space-y-4 text-gray-300 text-sm">
@@ -165,7 +163,6 @@
                         <li><a href="centrum.html" class="hover:text-theme-orange transition" data-i18n="footer_mobile">Sickle Cell Centre</a></li>
                     </ul>
                 </div>
-
                 <div>
                     <h3 class="font-bold text-xl mb-6 font-rambla" data-i18n="footer_support">Support</h3>
                     <ul class="space-y-4 text-gray-300 text-sm">
@@ -176,17 +173,13 @@
                     </ul>
                 </div>
             </div>
-
             <hr class="border-gray-700 my-8">
-
             <div class="flex flex-col md:flex-row justify-between items-center text-sm text-theme-orange font-medium">
                 <div class="flex items-center gap-2 mb-4 md:mb-0">
                     <i class="fa-regular fa-copyright"></i>
                     <span data-i18n="footer_rights">2025 ASHWINI. All rights reserved.</span>
                 </div>
-                <div data-i18n="footer_registered">
-                    A Registered Charitable Society
-                </div>
+                <div data-i18n="footer_registered">A Registered Charitable Society</div>
             </div>
         </div>
     </footer>
@@ -194,40 +187,36 @@
     <script>
         const translations = {
             en: {
-                nav_about: "About us", nav_work: "Our work", nav_contact: "Contact", nav_donate: "Donate",
-                footer_org: "Organization", footer_partner: "Partner with us",
+                nav_about: "About us", nav_work: "Our work", nav_contact: "Contact", nav_donate: "Donate", hero_btn: "Donate Now",
+                footer_org: "Organization", footer_annual: "Annual Report", footer_partner: "Partner with us",
                 footer_programs: "Programs", footer_hosp: "Hospital Services", footer_nurs: "Nursing school", footer_mobile: "Mobile Clinic", footer_disability: "Disability Services",
                 footer_support: "Support", footer_news: "Newsletter", footer_privacy: "Privacy Policy", footer_faq: "FAQ",
                 footer_rights: "2025 ASHWINI. All rights reserved.", footer_registered: "A Registered Charitable Society",
 
-                page_about_title: "About Us - AWF",
-                about_title: "About Ashwini",
-                about_intro: "We have been committed to empowering marginalized communities through health and education.",
-                mission_title: "Our Mission",
-                mission_text: "To provide comprehensive, accessible, and compassionate healthcare and educational opportunities to the most vulnerable populations in rural areas. We focus on long-term sustainable development and community independence.",
-                vision_title: "Our Vision",
-                vision_text: "A world where every individual, regardless of their social or economic background, has access to basic human rights, especially quality healthcare and education, enabling them to lead healthy and fulfilling lives.",
-                history_title: "Our History",
-                history_p1: "PLACEHOLDER",
-                history_p2: "",
+                proj_title: "School of Nursing",
+                proj_country: "India (Nilgiris District)",
+                proj_about_heading: "About the Nursing School",
+                proj_impact_heading: "Key Achievements",
+                proj_impact_1: "150+ graduates since inception",
+                proj_impact_2: "100% employment rate for graduates",
+                proj_impact_3: "Provides essential healthcare staff for the region",
+                proj_donate_text: "Invest in education and a healthy future for the tribal youth. Support a student now."
             },
             nl: {
-                nav_about: "Over ons", nav_work: "Ons werk", nav_contact: "Contact", nav_donate: "Doneer",
+                nav_about: "Over ons", nav_work: "Ons werk", nav_contact: "Contact", nav_donate: "Doneer", hero_btn: "Doneer Nu",
                 footer_org: "Organisatie", footer_annual: "Jaarverslag", footer_partner: "Partner worden",
                 footer_programs: "Programma's", footer_hosp: "Ziekenhuisdiensten", footer_nurs: "Verpleegschool", footer_mobile: "Mobiele Kliniek", footer_disability: "Gehandicaptenzorg",
                 footer_support: "Steun ons", footer_news: "Nieuwsbrief", footer_privacy: "Privacybeleid", footer_faq: "Veelgestelde vragen",
                 footer_rights: "2025 ASHWINI. Alle rechten voorbehouden.", footer_registered: "Een Geregistreerde Liefdadigheidsinstelling",
 
-                page_about_title: "Over Ons - AWF",
-                about_title: "Over Ashwini",
-                about_intro: "Wij zetten ons in om achtergestelde gemeenschappen te versterken door middel van gezondheidszorg en onderwijs.",
-                mission_title: "Onze Missie",
-                mission_text: "Het bieden van uitgebreide, toegankelijke en liefdevolle gezondheidszorg en onderwijsmogelijkheden aan de meest kwetsbare bevolkingsgroepen in landelijke gebieden. Wij richten ons op duurzame ontwikkeling en gemeenschapsonafhankelijkheid.",
-                vision_title: "Onze Visie",
-                vision_text: "Een wereld waarin elk individu, ongeacht sociale of economische achtergrond, toegang heeft tot basis mensenrechten, met name kwalitatieve gezondheidszorg en onderwijs, zodat zij een gezond en vervullend leven kunnen leiden.",
-                history_title: "Onze Geschiedenis",
-                history_p1: "PLACEHOLDER",
-                history_p2: "",
+                proj_title: "Verpleegschool",
+                proj_country: "India (Nilgiris District)",
+                proj_about_heading: "Over de Verpleegschool",
+                proj_impact_heading: "Belangrijkste Resultaten",
+                proj_impact_1: "150+ afgestudeerden sinds de start",
+                proj_impact_2: "100% werkgelegenheidspercentage voor afgestudeerden",
+                proj_impact_3: "Biedt essentieel zorgpersoneel voor de regio",
+                proj_donate_text: "Investeer in onderwijs en een gezonde toekomst voor de tribale jeugd. Steun nu een student."
             }
         };
 
@@ -248,7 +237,6 @@
                     }
                 }
             });
-
             const langButtons = document.querySelectorAll('.lang-btn');
             langButtons.forEach(btn => btn.classList.remove('active'));
             document.getElementById('btn-nl').classList.toggle('active', lang === 'nl');
