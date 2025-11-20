@@ -84,3 +84,7 @@ De website moet betrouwbaar, duidelijk en gebruiksvriendelijk zijn en vertrouwen
 - Een visueel verzorgd design
 - Een duidelijk klikbaar donatieproces
 
+## Github Links
+- Reporisoty : https://github.com/LisaWerner856/deepdive-ashwini
+- Github Projects: https://github.com/users/LisaWerner856/projects/2/views/2
+
