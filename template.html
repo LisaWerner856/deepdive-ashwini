@@ -31,14 +31,16 @@
 <body class="font-sans text-gray-800 bg-gray-50 flex flex-col min-h-screen">
 
     <header class="bg-white py-4 shadow-sm fixed top-0 left-0 w-full z-50 h-36">
-        <div class="container mx-auto px-4 flex justify-between items-center h-full">
+        <div class="container mx-auto px-4 flex justify-between items-center h-full max-w-7xl">
 
             <div class="flex items-center gap-4">
                 <a href="index.html">
                     <img src="projects/src/logo.svg" alt="AWF Logo" class="h-28 w-auto object-contain">
                 </a>
             </div>
+
             <div class="flex items-center gap-4">
+
                 <nav class="hidden md:block">
                     <ul class="flex gap-8 text-gray-800 font-medium text-sm">
                         <li><a href="over-ons.html" class="hover:text-orange-500" data-i18n="nav_about">About us</a></li>
@@ -47,7 +49,7 @@
                     </ul>
                 </nav>
 
-                <div class="text-sm font-medium border-l pl-4 border-gray-300 hidden sm:block">
+                <div class="text-sm font-medium border-l pl-3 border-gray-300 hidden sm:block">
                     <span onclick="changeLanguage('nl')" class="lang-btn hover:text-orange-500" id="btn-nl">NL</span>
                     <span class="text-gray-400 mx-1">|</span>
                     <span onclick="changeLanguage('en')" class="lang-btn active hover:text-orange-500" id="btn-en">EN</span>
@@ -73,6 +75,7 @@
                 </li>
             </ul>
         </div>
+
     </header>
 
     <main class="mt-36 flex-grow py-16 bg-gray-50">
@@ -91,13 +94,13 @@
         </div>
     </main>
 
-    <footer class="bg-gray-900 text-white pt-16 pb-8 mt-auto">
-        <div class="container mx-auto px-4">
+   <footer class="bg-gray-900 text-white pt-16 pb-8 mt-auto text-left">
+        <div class="container mx-auto px-4 md:px-16 lg:px-24">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
 
-                <div>
-                    <div class="flex items-center gap-3 mb-6">
-                        <img src="projects/src/logo-footer.svg" alt="Ashwini Logo" class="h-32 w-auto">
+                <div class="flex flex-col items-start">
+                    <div class="mt-0 md:-mt-8 transition-all">
+                        <img src="projects/src/logo-footer.svg" alt="Ashwini Logo" class="h-20 md:h-28 w-auto">
                     </div>
                 </div>
 
@@ -105,7 +108,6 @@
                     <h3 class="font-bold text-xl mb-6 font-rambla" data-i18n="footer_org">Organization</h3>
                     <ul class="space-y-4 text-gray-300 text-sm">
                         <li><a href="over-ons.html" class="hover:text-theme-orange transition" data-i18n="nav_about">About us</a></li>
-                        <li><a href="#" class="hover:text-theme-orange transition" data-i18n="footer_annual">Annual Report</a></li>
                         <li><a href="contact.html" class="hover:text-theme-orange transition" data-i18n="nav_contact">Contact</a></li>
                         <li><a href="#" class="hover:text-theme-orange transition" data-i18n="footer_partner">Partner with us</a></li>
                     </ul>
@@ -114,17 +116,16 @@
                 <div>
                     <h3 class="font-bold text-xl mb-6 font-rambla" data-i18n="footer_programs">Programs</h3>
                     <ul class="space-y-4 text-gray-300 text-sm">
-                        <li><a href="#" class="hover:text-theme-orange transition" data-i18n="footer_hosp">Hospital Services</a></li>
-                        <li><a href="#" class="hover:text-theme-orange transition" data-i18n="footer_nurs">Nursing school</a></li>
-                        <li><a href="#" class="hover:text-theme-orange transition" data-i18n="footer_mobile">Mobile Clinic</a></li>
-                        <li><a href="#" class="hover:text-theme-orange transition" data-i18n="footer_disability">Disability Services</a></li>
+                        <li><a href="ziekenhuis.html" class="hover:text-theme-orange transition" data-i18n="footer_hosp">Hospital</a></li>
+                        <li><a href="school.html" class="hover:text-theme-orange transition" data-i18n="footer_nurs">Nursing school</a></li>
+                        <li><a href="centrum.html" class="hover:text-theme-orange transition" data-i18n="footer_mobile">Sickle Cell Centre</a></li>
                     </ul>
                 </div>
 
                 <div>
                     <h3 class="font-bold text-xl mb-6 font-rambla" data-i18n="footer_support">Support</h3>
                     <ul class="space-y-4 text-gray-300 text-sm">
-                        <li><a href="#" class="hover:text-theme-orange transition" data-i18n="nav_donate">Donate</a></li>
+                        <li><a href="index.html#donation-form" class="hover:text-theme-orange transition" data-i18n="nav_donate">Donate</a></li>
                         <li><a href="#" class="hover:text-theme-orange transition" data-i18n="footer_news">Newsletter</a></li>
                         <li><a href="#" class="hover:text-theme-orange transition" data-i18n="footer_privacy">Privacy Policy</a></li>
                         <li><a href="#" class="hover:text-theme-orange transition" data-i18n="footer_faq">FAQ</a></li>
