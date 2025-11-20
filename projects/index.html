@@ -13,20 +13,81 @@
     <link href="https://fonts.googleapis.com/css2?family=Rambla:wght@400;700&display=swap" rel="stylesheet">
 
     <style>
-        .bg-theme-orange { background-color: #FFB766; }
-        .text-theme-orange { color: #E67E22; }
-        .text-theme-brown { color: #A04000; }
-        .border-theme-brown { border-color: #C05010; }
-        .btn-orange { background-color: #FF8C00; }
-        .btn-orange:hover { background-color: #E67E00; }
-        .bg-brand-active { background-color: #E67E22; }
-        .bg-brand-light { background-color: #FFF0E0; }
-        .font-rambla { font-family: 'Rambla', sans-serif; }
-        .lang-btn.active { font-weight: bold; text-decoration: underline; color: #E67E22; }
-        .lang-btn { cursor: pointer; }
-        .amount-radio:checked+label { background-color: #E67E22; color: white; border-color: #E67E22; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
-        .freq-btn.active { background-color: #E67E22; color: white; z-index: 10; }
-        html { scroll-behavior: smooth; }
+        .bg-theme-orange {
+            background-color: #FFB766;
+        }
+
+        .text-theme-orange {
+            color: #E67E22;
+        }
+
+        .text-theme-brown {
+            color: #A04000;
+        }
+
+        .border-theme-brown {
+            border-color: #C05010;
+        }
+
+        .btn-orange {
+            background-color: #FF8C00;
+        }
+
+        .btn-orange:hover {
+            background-color: #E67E00;
+        }
+
+        .bg-brand-light {
+            background-color: #FFF0E0;
+        }
+
+        .font-rambla {
+            font-family: 'Rambla', sans-serif;
+        }
+
+        .lang-btn.active {
+            font-weight: bold;
+            text-decoration: underline;
+            color: #E67E22;
+        }
+
+        .lang-btn {
+            cursor: pointer;
+        }
+
+        .amount-radio:checked+label {
+            background-color: #E67E22;
+            color: white;
+            border-color: #E67E22;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .freq-btn.active {
+            background-color: #E67E22;
+            color: white;
+            z-index: 10;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .service-icon-wrapper {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            border: 2px solid #A04000;
+        }
+
+        .group:hover .service-icon-wrapper {
+            transform: scale(1.08);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+            background-color: white;
+            border-color: #E67E22;
+        }
+
+        .hero-mission-text {
+            text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.7), 0px 0px 3px rgba(0, 0, 0, 0.5);
+        }
     </style>
 </head>
 
@@ -63,16 +124,21 @@
             </div>
         </div>
 
-        <div id="mobile-menu" class="hidden md:hidden bg-white px-4 pt-2 pb-4 border-t border-gray-100 absolute top-36 left-0 w-full shadow-md">
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-white px-4 pt-2 pb-4 border-t border-gray-100 absolute top-36 left-0 w-full shadow-md">
             <ul class="flex flex-col gap-3 text-gray-800 font-medium text-base">
-                <li><a href="over-ons.html" class="hover:text-orange-500 block py-1" data-i18n="nav_about">About us</a></li>
+                <li><a href="over-ons.html" class="hover:text-orange-500 block py-1" data-i18n="nav_about">About us</a>
+                </li>
                 <li><a href="ons-werk.html" class="hover:text-orange-500 block py-1" data-i18n="nav_work">Our work</a></li>
-                <li><a href="contact.html" class="hover:text-orange-500 block py-1" data-i18n="nav_contact">Contact</a></li>
+                <li><a href="contact.html" class="hover:text-orange-500 block py-1" data-i18n="nav_contact">Contact</a>
+                </li>
                 <li class="pt-2 border-t border-gray-100">
                     <div class="text-sm font-medium">
-                        <span onclick="changeLanguage('nl')" class="lang-btn hover:text-orange-500" id="btn-nl-mobile">NL</span>
+                        <span onclick="changeLanguage('nl')" class="lang-btn hover:text-orange-500"
+                            id="btn-nl-mobile">NL</span>
                         <span class="text-gray-400 mx-1">|</span>
-                        <span onclick="changeLanguage('en')" class="lang-btn active hover:text-orange-500" id="btn-en-mobile">EN</span>
+                        <span onclick="changeLanguage('en')" class="lang-btn active hover:text-orange-500"
+                            id="btn-en-mobile">EN</span>
                     </div>
                 </li>
             </ul>
@@ -80,7 +146,7 @@
 
     </header>
 
-    <section class="relative w-full h-[500px] overflow-hidden mt-36">
+    <section class="relative w-full h-[600px] overflow-hidden mt-36">
         <div class="absolute inset-0 flex w-full h-full">
             <div class="w-1/2 h-full bg-cover bg-center relative" style="background-image: url('./src/foto-1.png');">
                 <div class="absolute inset-0 bg-black/20"></div>
@@ -94,6 +160,10 @@
                 data-i18n="hero_title">
                 Hope for<br>Everyone
             </h2>
+            <p class="text-white text-lg md:text-xl max-w-xl mx-auto mb-8 font-semibold hero-mission-text"
+                data-i18n="hero_mission">
+                Providing essential healthcare and education to vulnerable communities.
+            </p>
             <a href="#donation-form" onclick="smoothScroll(event, 'donation-form')"
                 class="font-rambla bg-white text-orange-500 hover:bg-gray-100 font-bold py-3 px-8 rounded-full shadow-lg transition uppercase text-lg tracking-wide"
                 data-i18n="hero_btn">
@@ -102,27 +172,37 @@
         </div>
     </section>
 
-    <section class="bg-theme-orange py-16">
+    <section class="bg-orange-400 py-16">
         <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                <div class="flex flex-col items-center group cursor-pointer">
-                    <div class="w-28 h-28 rounded-full flex items-center justify-center mb-6 transition-transform transform group-hover:scale-105 border-2 border-theme-brown bg-white/20 backdrop-blur-sm">
-                        <i class="fa-solid fa-hand-holding-dollar text-5xl text-theme-brown"></i>
+            <div class="grid grid-cols-3 gap-8 text-center">
+
+                <div class="flex flex-col items-center group cursor-pointer p-4 rounded-xl transition">
+                    <div
+                        class="w-24 h-24 sm:w-28 sm:h-28 rounded-full flex items-center justify-center mb-4 sm:mb-6 service-icon-wrapper bg-white">
+                        <i class="fa-solid fa-hand-holding-dollar text-4xl sm:text-5xl text-theme-brown"></i>
                     </div>
-                    <span class="font-rambla text-gray-900 text-xl font-medium" data-i18n="service_fund">Fund a Project</span>
+                    <span class="font-rambla text-gray-700 text-sm sm:text-xl font-medium" data-i18n="service_fund">Fund a
+                        Project</span>
                 </div>
-                <div class="flex flex-col items-center group cursor-pointer">
-                    <div class="w-28 h-28 rounded-full flex items-center justify-center mb-6 transition-transform transform group-hover:scale-105 border-2 border-theme-brown bg-white/20 backdrop-blur-sm">
-                        <i class="fa-solid fa-graduation-cap text-5xl text-theme-brown"></i>
+
+                <div class="flex flex-col items-center group cursor-pointer p-4 rounded-xl transition">
+                    <div
+                        class="w-24 h-24 sm:w-28 sm:h-28 rounded-full flex items-center justify-center mb-4 sm:mb-6 service-icon-wrapper bg-white">
+                        <i class="fa-solid fa-graduation-cap text-4xl sm:text-5xl text-theme-brown"></i>
                     </div>
-                    <span class="font-rambla text-gray-900 text-xl font-medium" data-i18n="service_edu">Support Education</span>
+                    <span class="font-rambla text-gray-700 text-sm sm:text-xl font-medium" data-i18n="service_edu">Support
+                        Education</span>
                 </div>
-                <div class="flex flex-col items-center group cursor-pointer">
-                    <div class="w-28 h-28 rounded-full flex items-center justify-center mb-6 transition-transform transform group-hover:scale-105 border-2 border-theme-brown bg-white/20 backdrop-blur-sm">
-                        <i class="fa-solid fa-clipboard-list text-5xl text-theme-brown"></i>
+
+                <div class="flex flex-col items-center group cursor-pointer p-4 rounded-xl transition">
+                    <div
+                        class="w-24 h-24 sm:w-28 sm:h-28 rounded-full flex items-center justify-center mb-4 sm:mb-6 service-icon-wrapper bg-white">
+                        <i class="fa-solid fa-clipboard-list text-4xl sm:text-5xl text-theme-brown"></i>
                     </div>
-                    <span class="font-rambla text-gray-900 text-xl font-medium" data-i18n="service_care">Provide Care</span>
+                    <span class="font-rambla text-gray-700 text-sm sm:text-xl font-medium" data-i18n="service_care">Provide
+                        Care</span>
                 </div>
+
             </div>
         </div>
     </section>
@@ -135,51 +215,68 @@
                 </h2>
                 <div class="mb-8">
                     <div class="flex w-full rounded-lg overflow-hidden border border-gray-300 shadow-sm">
-                        <button id="freq-monthly" data-freq="monthly" class="freq-btn flex-1 py-3 px-4 bg-gray-100 text-gray-600 font-semibold hover:bg-gray-200 transition active">
+                        <button id="freq-monthly" data-freq="monthly"
+                            class="freq-btn flex-1 py-3 px-4 bg-gray-100 text-gray-600 font-semibold hover:bg-gray-200 transition active">
                             <span data-i18n="donate_monthly">Maandelijks</span>
                         </button>
-                        <button id="freq-once" data-freq="once" class="freq-btn flex-1 py-3 px-4 bg-gray-100 text-gray-600 font-semibold hover:bg-gray-200 transition">
+                        <button id="freq-once" data-freq="once"
+                            class="freq-btn flex-1 py-3 px-4 bg-gray-100 text-gray-600 font-semibold hover:bg-gray-200 transition">
                             <span data-i18n="donate_once">Eenmalig</span>
                         </button>
                     </div>
                 </div>
                 <div class="mb-8">
-                    <h3 class="font-bold text-lg text-gray-800 mb-4" data-i18n="donate_amount_label">Kies een Bedrag*</h3>
+                    <h3 class="font-bold text-lg text-gray-800 mb-4" data-i18n="donate_amount_label">Kies een Bedrag*
+                    </h3>
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                         <input type="radio" name="amount" id="amount30" value="30" class="hidden amount-radio">
-                        <label for="amount30" class="bg-white border-2 border-gray-200 text-gray-800 text-center p-4 rounded-lg cursor-pointer transition hover:border-theme-orange">
+                        <label for="amount30"
+                            class="bg-white border-2 border-gray-200 text-gray-800 text-center p-4 rounded-lg cursor-pointer transition hover:border-theme-orange">
                             <div class="font-rambla text-2xl font-bold mb-1">€30</div>
-                            <p class="text-xs font-semibold uppercase opacity-75" data-i18n="donate_opt_30_desc">Voeding</p>
+                            <p class="text-xs font-semibold uppercase opacity-75" data-i18n="donate_opt_30_desc">Voeding
+                            </p>
                         </label>
                         <input type="radio" name="amount" id="amount20" value="20" class="hidden amount-radio" checked>
-                        <label for="amount20" class="bg-white border-2 border-gray-200 text-gray-800 text-center p-4 rounded-lg cursor-pointer transition hover:border-theme-orange">
+                        <label for="amount20"
+                            class="bg-white border-2 border-gray-200 text-gray-800 text-center p-4 rounded-lg cursor-pointer transition hover:border-theme-orange">
                             <div class="font-rambla text-2xl font-bold mb-1">€20</div>
-                            <p class="text-xs font-semibold uppercase opacity-75" data-i18n="donate_opt_20_desc">Onderwijs</p>
+                            <p class="text-xs font-semibold uppercase opacity-75" data-i18n="donate_opt_20_desc">
+                                Onderwijs</p>
                         </label>
                         <input type="radio" name="amount" id="amount15" value="15" class="hidden amount-radio">
-                        <label for="amount15" class="bg-white border-2 border-gray-200 text-gray-800 text-center p-4 rounded-lg cursor-pointer transition hover:border-theme-orange">
+                        <label for="amount15"
+                            class="bg-white border-2 border-gray-200 text-gray-800 text-center p-4 rounded-lg cursor-pointer transition hover:border-theme-orange">
                             <div class="font-rambla text-2xl font-bold mb-1">€15</div>
-                            <p class="text-xs font-semibold uppercase opacity-75" data-i18n="donate_opt_15_desc">Project Steun</p>
+                            <p class="text-xs font-semibold uppercase opacity-75" data-i18n="donate_opt_15_desc">Project
+                                Steun</p>
                         </label>
                         <input type="radio" name="amount" id="amount_custom" value="custom" class="hidden amount-radio">
-                        <label for="amount_custom" class="bg-white border-2 border-gray-200 text-gray-800 text-center p-4 rounded-lg cursor-pointer transition hover:border-theme-orange flex flex-col justify-center">
+                        <label for="amount_custom"
+                            class="bg-white border-2 border-gray-200 text-gray-800 text-center p-4 rounded-lg cursor-pointer transition hover:border-theme-orange flex flex-col justify-center">
                             <i class="fa-solid fa-ellipsis text-lg mb-1"></i>
-                            <p class="text-xs font-semibold uppercase opacity-75" data-i18n="donate_own">Ander Bedrag</p>
+                            <p class="text-xs font-semibold uppercase opacity-75" data-i18n="donate_own">Ander Bedrag
+                            </p>
                         </label>
                     </div>
                     <div id="custom-amount-input" class="mt-4 hidden">
-                        <label class="block text-sm font-medium text-gray-700 mb-1" data-i18n="donate_custom_placeholder">Voer uw bedrag in (€)*</label>
+                        <label class="block text-sm font-medium text-gray-700 mb-1"
+                            data-i18n="donate_custom_placeholder">Voer uw bedrag in (€)*</label>
                         <div class="relative">
-                            <span class="absolute left-3 top-1/2 transform -translate-y-1/2 font-bold text-gray-600">€</span>
-                            <input type="number" id="custom-amount" class="w-full border border-gray-300 rounded p-3 pl-8 focus:outline-none focus:border-theme-orange focus:ring-1 focus:ring-theme-orange transition" placeholder="25.00" min="5" step="1">
+                            <span
+                                class="absolute left-3 top-1/2 transform -translate-y-1/2 font-bold text-gray-600">€</span>
+                            <input type="number" id="custom-amount"
+                                class="w-full border border-gray-300 rounded p-3 pl-8 focus:outline-none focus:border-theme-orange focus:ring-1 focus:ring-theme-orange transition"
+                                placeholder="25.00" min="5" step="1">
                         </div>
                     </div>
-                    <div class="bg-brand-light p-4 rounded-lg mt-4 border border-orange-200 flex gap-4 items-start">
+                    <div
+                        class="bg-brand-light p-4 rounded-lg mt-4 border border-orange-200 flex gap-4 items-start">
                         <div class="text-theme-orange text-2xl pt-1">
                             <i class="fa-solid fa-hands-helping"></i>
                         </div>
                         <p class="text-sm text-gray-700 leading-relaxed" data-i18n="donate_impact_generic">
-                            Uw donatie gaat rechtstreeks naar onze projecten in onderwijs, zorg en algemene steun waar de nood het hoogst is.
+                            Uw donatie gaat rechtstreeks naar onze projecten in onderwijs, zorg en algemene steun waar de
+                            nood het hoogst is.
                         </p>
                     </div>
                 </div>
@@ -187,28 +284,37 @@
                     <h3 class="font-bold text-lg text-gray-800 mb-4" data-i18n="form_step3">Uw Gegevens</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1" data-i18n="form_firstname">Voornaam*</label>
-                            <input type="text" class="w-full border border-gray-300 rounded p-3 focus:outline-none focus:border-theme-orange focus:ring-1 focus:ring-theme-orange transition">
+                            <label class="block text-sm font-medium text-gray-700 mb-1"
+                                data-i18n="form_firstname">Voornaam*</label>
+                            <input type="text"
+                                class="w-full border border-gray-300 rounded p-3 focus:outline-none focus:border-theme-orange focus:ring-1 focus:ring-theme-orange transition">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1" data-i18n="form_lastname">Achternaam*</label>
-                            <input type="text" class="w-full border border-gray-300 rounded p-3 focus:outline-none focus:border-theme-orange focus:ring-1 focus:ring-theme-orange transition">
+                            <label class="block text-sm font-medium text-gray-700 mb-1"
+                                data-i18n="form_lastname">Achternaam*</label>
+                            <input type="text"
+                                class="w-full border border-gray-300 rounded p-3 focus:outline-none focus:border-theme-orange focus:ring-1 focus:ring-theme-orange transition">
                         </div>
                         <div class="md:col-span-2">
-                            <label class="block text-sm font-medium text-gray-700 mb-1" data-i18n="form_email">E-mail*</label>
-                            <input type="email" class="w-full border border-gray-300 rounded p-3 focus:outline-none focus:border-theme-orange focus:ring-1 focus:ring-theme-orange transition">
+                            <label class="block text-sm font-medium text-gray-700 mb-1"
+                                data-i18n="form_email">E-mail*</label>
+                            <input type="email"
+                                class="w-full border border-gray-300 rounded p-3 focus:outline-none focus:border-theme-orange focus:ring-1 focus:ring-theme-orange transition">
                         </div>
                     </div>
                 </div>
                 <div>
                     <div class="mb-6">
-                        <label class="block text-sm font-medium text-gray-700 mb-2" data-i18n="pay_method">Betaalmethode*</label>
+                        <label class="block text-sm font-medium text-gray-700 mb-2"
+                            data-i18n="pay_method">Betaalmethode*</label>
                         <div class="border border-theme-orange rounded-lg p-4 flex items-center bg-brand-light">
                             <i class="fa-solid fa-wallet text-xl text-theme-orange mr-3"></i>
-                            <span id="payment-text" class="font-semibold" data-i18n="pay_auth_monthly">Automatische Incasso (Maandelijks)</span>
+                            <span id="payment-text" class="font-semibold" data-i18n="pay_auth_monthly">Automatische
+                                Incasso (Maandelijks)</span>
                         </div>
                     </div>
-                    <button class="w-full btn-orange text-white font-bold py-4 px-6 rounded-lg shadow-xl hover:shadow-2xl transition flex justify-center items-center gap-3 text-xl uppercase tracking-wide">
+                    <button
+                        class="w-full btn-orange text-white font-bold py-4 px-6 rounded-lg shadow-xl hover:shadow-2xl transition flex justify-center items-center gap-3 text-xl uppercase tracking-wide">
                         <span data-i18n="btn_donate">Doneer Nu</span>
                         <i class="fa-solid fa-heart text-white/50"></i>
                     </button>
@@ -221,28 +327,38 @@
         <div class="container mx-auto px-4">
             <div class="flex flex-col lg:flex-row gap-8">
                 <div class="flex-grow">
-                    <h3 class="font-rambla text-theme-orange font-bold text-2xl mb-6" data-i18n="impact_title">Our Impact</h3>
+                    <h3 class="font-rambla text-theme-orange font-bold text-2xl mb-6" data-i18n="impact_title">Our Impact
+                    </h3>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <div class="bg-gray-400 h-40 relative flex items-center justify-center overflow-hidden">
-                            <div class="absolute inset-0 border-2 border-white/50 m-2 flex items-center justify-center">
-                                <span class="text-white font-bold tracking-widest uppercase text-center">Place<br>Holder</span>
+                            <div
+                                class="absolute inset-0 border-2 border-white/50 m-2 flex items-center justify-center">
+                                <span
+                                    class="text-white font-bold tracking-widest uppercase text-center">Place<br>Holder</span>
                             </div>
                         </div>
                         <div class="bg-gray-400 h-40 relative flex items-center justify-center overflow-hidden">
-                            <div class="absolute inset-0 border-2 border-white/50 m-2 flex items-center justify-center">
-                                <span class="text-white font-bold tracking-widest uppercase text-center">Place<br>Holder</span>
+                            <div
+                                class="absolute inset-0 border-2 border-white/50 m-2 flex items-center justify-center">
+                                <span
+                                    class="text-white font-bold tracking-widest uppercase text-center">Place<br>Holder</span>
                             </div>
                         </div>
                         <div class="bg-gray-400 h-40 relative flex items-center justify-center overflow-hidden">
-                            <div class="absolute inset-0 border-2 border-white/50 m-2 flex items-center justify-center">
-                                <span class="text-white font-bold tracking-widest uppercase text-center">Place<br>Holder</span>
+                            <div
+                                class="absolute inset-0 border-2 border-white/50 m-2 flex items-center justify-center">
+                                <span
+                                    class="text-white font-bold tracking-widest uppercase text-center">Place<br>Holder</span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="flex flex-col justify-center items-start lg:items-center min-w-[200px] mt-8 lg:mt-0">
+                <div
+                    class="flex flex-col justify-center items-start lg:items-center min-w-[200px] mt-8 lg:mt-0">
                     <p class="text-gray-800 text-lg mb-3" data-i18n="cta_interested">Interested?</p>
-                    <a href="ons-werk.html" class="font-rambla btn-orange text-white font-bold py-3 px-8 rounded-full shadow hover:opacity-90 transition text-sm uppercase" data-i18n="cta_btn">SEE MORE</a>
+                    <a href="ons-werk.html"
+                        class="font-rambla btn-orange text-white font-bold py-3 px-8 rounded-full shadow hover:opacity-90 transition text-sm uppercase"
+                        data-i18n="cta_btn">SEE MORE</a>
                 </div>
             </div>
         </div>
@@ -261,27 +377,36 @@
                 <div>
                     <h3 class="font-bold text-xl mb-6 font-rambla" data-i18n="footer_org">Organization</h3>
                     <ul class="space-y-4 text-gray-300 text-sm">
-                        <li><a href="over-ons.html" class="hover:text-theme-orange transition" data-i18n="nav_about">About us</a></li>
-                        <li><a href="contact.html" class="hover:text-theme-orange transition" data-i18n="nav_contact">Contact</a></li>
-                        <li><a href="#" class="hover:text-theme-orange transition" data-i18n="footer_partner">Partner with us</a></li>
+                        <li><a href="over-ons.html" class="hover:text-theme-orange transition" data-i18n="nav_about">About
+                                us</a></li>
+                        <li><a href="contact.html" class="hover:text-theme-orange transition"
+                                data-i18n="nav_contact">Contact</a></li>
+                        <li><a href="#" class="hover:text-theme-orange transition" data-i18n="footer_partner">Partner
+                                with us</a></li>
                     </ul>
                 </div>
 
                 <div>
                     <h3 class="font-bold text-xl mb-6 font-rambla" data-i18n="footer_programs">Programs</h3>
                     <ul class="space-y-4 text-gray-300 text-sm">
-                        <li><a href="ziekenhuis.html" class="hover:text-theme-orange transition" data-i18n="footer_hosp">Hospital</a></li>
-                        <li><a href="school.html" class="hover:text-theme-orange transition" data-i18n="footer_nurs">Nursing school</a></li>
-                        <li><a href="centrum.html" class="hover:text-theme-orange transition" data-i18n="footer_mobile">Sickle Cell Centre</a></li>
+                        <li><a href="ziekenhuis.html" class="hover:text-theme-orange transition"
+                                data-i18n="footer_hosp">Hospital</a></li>
+                        <li><a href="school.html" class="hover:text-theme-orange transition"
+                                data-i18n="footer_nurs">Nursing school</a></li>
+                        <li><a href="centrum.html" class="hover:text-theme-orange transition"
+                                data-i18n="footer_mobile">Sickle Cell Centre</a></li>
                     </ul>
                 </div>
 
                 <div>
                     <h3 class="font-bold text-xl mb-6 font-rambla" data-i18n="footer_support">Support</h3>
                     <ul class="space-y-4 text-gray-300 text-sm">
-                        <li><a href="index.html#donation-form" class="hover:text-theme-orange transition" data-i18n="nav_donate">Donate</a></li>
-                        <li><a href="#" class="hover:text-theme-orange transition" data-i18n="footer_news">Newsletter</a></li>
-                        <li><a href="#" class="hover:text-theme-orange transition" data-i18n="footer_privacy">Privacy Policy</a></li>
+                        <li><a href="index.html#donation-form" class="hover:text-theme-orange transition"
+                                data-i18n="nav_donate">Donate</a></li>
+                        <li><a href="#" class="hover:text-theme-orange transition" data-i18n="footer_news">Newsletter</a>
+                        </li>
+                        <li><a href="#" class="hover:text-theme-orange transition" data-i18n="footer_privacy">Privacy
+                                Policy</a></li>
                         <li><a href="#" class="hover:text-theme-orange transition" data-i18n="footer_faq">FAQ</a></li>
                     </ul>
                 </div>
@@ -289,7 +414,8 @@
 
             <hr class="border-gray-700 my-8">
 
-            <div class="flex flex-col md:flex-row justify-between items-center text-sm text-theme-orange font-medium">
+            <div
+                class="flex flex-col md:flex-row justify-between items-center text-sm text-theme-orange font-medium">
                 <div class="flex items-center gap-2 mb-4 md:mb-0">
                     <i class="fa-regular fa-copyright"></i>
                     <span data-i18n="footer_rights">2025 ASHWINI. All rights reserved.</span>
@@ -304,48 +430,106 @@
     <script>
         const translations = {
             en: {
-                nav_about: "About us", nav_work: "Our work", nav_contact: "Contact", nav_donate: "Donate",
-                hero_title: "Hope for<br>Everyone", hero_btn: "Donate Now",
-                service_fund: "Fund a Project", service_edu: "Support Education", service_care: "Provide Care",
-                impact_title: "Our Impact", cta_interested: "Interested?", cta_btn: "SEE MORE",
-                form_heading: "Support the Ashwini Welfare Foundation", form_step3: "Your Details",
-                donate_monthly: "Monthly", donate_once: "One-time", donate_amount_label: "Choose an Amount*",
-                donate_opt_30_desc: "Food", donate_opt_20_desc: "Education", donate_opt_15_desc: "Project Support",
+                nav_about: "About us",
+                nav_work: "Our work",
+                nav_contact: "Contact",
+                nav_donate: "Donate",
+                hero_title: "Hope for<br>Everyone",
+                hero_mission: "Providing essential healthcare and education to vulnerable communities.",
+                hero_btn: "Donate Now",
+                service_fund: "Fund a Project",
+                service_edu: "Support Education",
+                service_care: "Provide Care",
+                impact_title: "Our Impact",
+                cta_interested: "Interested?",
+                cta_btn: "SEE MORE",
+                form_heading: "Support the Ashwini Welfare Foundation",
+                form_step3: "Your Details",
+                donate_monthly: "Monthly",
+                donate_once: "One-time",
+                donate_amount_label: "Choose an Amount*",
+                donate_opt_30_desc: "Food",
+                donate_opt_20_desc: "Education",
+                donate_opt_15_desc: "Project Support",
                 donate_own: "Other Amount",
                 donate_impact_generic: "Your donation goes directly to our projects in education, care, and general support where the need is highest.",
                 donate_custom_placeholder: "Enter your amount (€)*",
-                form_firstname: "First name*", form_lastname: "Last name*", form_email: "E-mail*",
-                pay_method: "Payment Method*", pay_auth_monthly: "Direct Debit Authorization (Monthly)", pay_auth_once: "One-Time Payment", btn_donate: "Donate Now",
+                form_firstname: "First name*",
+                form_lastname: "Last name*",
+                form_email: "E-mail*",
+                pay_method: "Payment Method*",
+                pay_auth_monthly: "Direct Debit Authorization (Monthly)",
+                pay_auth_once: "One-Time Payment",
+                btn_donate: "Donate Now",
 
-                footer_org: "Organization", footer_annual: "Annual Report", footer_partner: "Partner with us",
-                footer_programs: "Programs", footer_hosp: "Hospital Services", footer_nurs: "Nursing school", footer_mobile: "Mobile Clinic", footer_disability: "Disability Services",
-                footer_support: "Support", footer_news: "Newsletter", footer_privacy: "Privacy Policy", footer_faq: "FAQ",
-                footer_rights: "2025 ASHWINI. All rights reserved.", footer_registered: "A Registered Charitable Society"
+                footer_org: "Organization",
+                footer_annual: "Annual Report",
+                footer_partner: "Partner with us",
+                footer_programs: "Programs",
+                footer_hosp: "Hospital Services",
+                footer_nurs: "Nursing school",
+                footer_mobile: "Mobile Clinic",
+                footer_disability: "Disability Services",
+                footer_support: "Support",
+                footer_news: "Newsletter",
+                footer_privacy: "Privacy Policy",
+                footer_faq: "FAQ",
+                footer_rights: "2025 ASHWINI. All rights reserved.",
+                footer_registered: "A Registered Charitable Society"
             },
             nl: {
-                nav_about: "Over ons", nav_work: "Ons werk", nav_contact: "Contact", nav_donate: "Doneer",
-                hero_title: "HOOP VOOR<br>IEDEREEN", hero_btn: "Doneer Nu",
-                service_fund: "Steun een Project", service_edu: "Steun Onderwijs", service_care: "Verleen Zorg",
-                impact_title: "Onze Impact", cta_interested: "Geïnteresseerd?", cta_btn: "BEKIJK MEER",
-                form_heading: "Steun de Ashwini Welfare Foundation", form_step3: "Uw Gegevens",
-                donate_monthly: "Maandelijks", donate_once: "Eenmalig", donate_amount_label: "Kies een Bedrag*",
-                donate_opt_30_desc: "voeding", donate_opt_20_desc: "Onderwijs", donate_opt_15_desc: "Project Steun",
+                nav_about: "Over ons",
+                nav_work: "Ons werk",
+                nav_contact: "Contact",
+                nav_donate: "Doneer",
+                hero_title: "HOOP VOOR<br>IEDEREEN",
+                hero_mission: "Het bieden van essentiële gezondheidszorg en onderwijs aan kwetsbare gemeenschappen.",
+                hero_btn: "Doneer Nu",
+                service_fund: "Steun een Project",
+                service_edu: "Steun Onderwijs",
+                service_care: "Verleen Zorg",
+                impact_title: "Onze Impact",
+                cta_interested: "Geïnteresseerd?",
+                cta_btn: "BEKIJK MEER",
+                form_heading: "Steun de Ashwini Welfare Foundation",
+                form_step3: "Uw Gegevens",
+                donate_monthly: "Maandelijks",
+                donate_once: "Eenmalig",
+                donate_amount_label: "Kies een Bedrag*",
+                donate_opt_30_desc: "voeding",
+                donate_opt_20_desc: "Onderwijs",
+                donate_opt_15_desc: "Project Steun",
                 donate_own: "Ander Bedrag",
                 donate_impact_generic: "Uw donatie gaat rechtstreeks naar onze projecten in onderwijs, zorg en algemene steun waar de nood het hoogst is.",
                 donate_custom_placeholder: "Voer uw bedrag in (€)*",
-                form_firstname: "Voornaam*", form_lastname: "Achternaam*", form_email: "E-mail*",
-                pay_method: "Betaalmethode*", pay_auth_monthly: "Automatische Incasso (Maandelijks)", pay_auth_once: "Eenmalige Betaling", btn_donate: "Doneer Nu",
+                form_firstname: "Voornaam*",
+                form_lastname: "Achternaam*",
+                form_email: "E-mail*",
+                pay_method: "Betaalmethode*",
+                pay_auth_monthly: "Automatische Incasso (Maandelijks)",
+                pay_auth_once: "Eenmalige Betaling",
+                btn_donate: "Doneer Nu",
 
-                footer_org: "Organisatie", footer_partner: "Partner worden",
-                footer_programs: "Programma's", footer_hosp: "Ziekenhuisdiensten", footer_nurs: "Verpleegschool", footer_mobile: "Mobiele Kliniek",
-                footer_support: "Steun ons", footer_news: "Nieuwsbrief", footer_privacy: "Privacybeleid", footer_faq: "Veelgestelde vragen",
-                footer_rights: "2025 ASHWINI. Alle rechten voorbehouden.", footer_registered: "Een Geregistreerde Liefdadigheidsinstelling"
+                footer_org: "Organisatie",
+                footer_partner: "Partner worden",
+                footer_programs: "Programma's",
+                footer_hosp: "Ziekenhuisdiensten",
+                footer_nurs: "Verpleegschool",
+                footer_mobile: "Mobiele Kliniek",
+                footer_support: "Steun ons",
+                footer_news: "Nieuwsbrief",
+                footer_privacy: "Privacybeleid",
+                footer_faq: "Veelgestelde vragen",
+                footer_rights: "2025 ASHWINI. Alle rechten voorbehouden.",
+                footer_registered: "Een Geregistreerde Liefdadigheidsinstelling"
             }
         };
 
         function smoothScroll(event, targetId) {
             event.preventDefault();
-            document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
+            document.getElementById(targetId).scrollIntoView({
+                behavior: 'smooth'
+            });
         }
 
         function toggleMobileMenu() {
@@ -373,18 +557,18 @@
 
             const freqBtn = document.querySelector('.freq-btn.active');
             if (freqBtn) {
-                updatePaymentText(freqBtn.getAttribute('data-freq'), lang);
+                updatePaymentText(freqBtn.getAttribute('data-freq'));
             }
         }
 
-        function updatePaymentText(freq, lang) {
+        function updatePaymentText(freq) {
             const paymentTextElement = document.getElementById('payment-text');
             if (!paymentTextElement) return;
 
             const activeLangElement = document.querySelector('.lang-btn.active');
             let currentLang = 'en';
             if (activeLangElement) {
-                 currentLang = activeLangElement.id.replace('btn-', '').replace('-mobile', '');
+                currentLang = activeLangElement.id.replace('btn-', '').replace('-mobile', '');
             }
 
             const langData = translations[currentLang] || translations['en'];
@@ -397,12 +581,13 @@
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-            changeLanguage('en');
+            changeLanguage('nl');
+
             const freqButtons = document.querySelectorAll('.freq-btn');
             const amountRadios = document.querySelectorAll('.amount-radio');
             const customAmountInput = document.getElementById('custom-amount-input');
 
-            if(freqButtons.length > 0) {
+            if (freqButtons.length > 0) {
                 freqButtons.forEach(button => {
                     button.addEventListener('click', () => {
                         freqButtons.forEach(btn => btn.classList.remove('active'));
@@ -411,16 +596,16 @@
                     });
                 });
                 const monthlyBtn = document.getElementById('freq-monthly');
-                if(monthlyBtn) monthlyBtn.click();
+                if (monthlyBtn) monthlyBtn.click();
             }
 
-            if(amountRadios.length > 0) {
+            if (amountRadios.length > 0) {
                 amountRadios.forEach(radio => {
                     radio.addEventListener('change', () => {
                         if (radio.value === 'custom') {
                             customAmountInput.classList.remove('hidden');
                             const customInput = document.getElementById('custom-amount');
-                            if(customInput) customInput.focus();
+                            if (customInput) customInput.focus();
                         } else {
                             customAmountInput.classList.add('hidden');
                         }
@@ -430,4 +615,5 @@
         });
     </script>
 </body>
+
 </html>
