@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina Titel - AWF</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rambla:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        .bg-theme-orange { background-color: #FFB766; }
+        .text-theme-orange { color: #E67E22; }
+        .text-theme-brown { color: #A04000; }
+        .border-theme-brown { border-color: #C05010; }
+        .btn-orange { background-color: #FF8C00; }
+        .btn-orange:hover { background-color: #E67E00; }
+        .bg-brand-active { background-color: #E67E22; }
+        .bg-brand-light { background-color: #FFF0E0; }
+        .font-rambla { font-family: 'Rambla', sans-serif; }
+        .lang-btn.active { font-weight: bold; text-decoration: underline; color: #E67E22; }
+        .lang-btn { cursor: pointer; }
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+
+<body class="font-sans text-gray-800 bg-gray-50 flex flex-col min-h-screen">
+
+    <header class="bg-white py-4 shadow-sm fixed top-0 left-0 w-full z-50 h-36">
+        <div class="container mx-auto px-4 flex justify-between items-center h-full max-w-7xl">
+
+            <div class="flex items-center gap-4">
+                <a href="index.html">
+                    <img src="./src/logo.svg" alt="AWF Logo" class="h-28 w-auto object-contain">
+                </a>
+            </div>
+
+            <div class="flex items-center gap-4">
+
+                <button id="mobile-menu-button" onclick="toggleMobileMenu()" class="md:hidden p-2 text-gray-800">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        
+
+    </header>
+
+    <main class="mt-15 flex-grow py-1 bg-gray-50">
+        <main class="mt-36 flex-grow py-16 bg-gray-50">
+    <div class="flex justify-center items-center">
+        
+        <div class="bg-white p-12 rounded-2xl shadow-lg w-full max-w-sm">
+            <h1 class="text-3xl font-bold mb-6 text-center text-theme-orange font-rambla">
+                Login as admin 
+            </h1>
+
+            <form action="#" class="space-y-5">
+
+                <div>
+                    <label class="block font-medium mb-1">Username</label>
+                    <input type="text" 
+                           class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-theme-orange outline-none"
+                           placeholder="Enter username">
+                </div>
+
+                <div>
+                    <label class="block font-medium mb-1">Password</label>
+                    <input type="password" 
+                           class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-theme-orange outline-none"
+                           placeholder="Enter password">
+                </div>
+
+                <button class="w-full bg-theme-orange text-white py-2 rounded-lg font-semibold hover:bg-orange-500 transition">
+                    Login
+                </button>
+
+            </form>
+        </div>
+
+    </div>
+</main>
+</body>
+</html>

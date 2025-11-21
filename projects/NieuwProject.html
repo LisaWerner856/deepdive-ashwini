@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina Titel - AWF</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rambla:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        .bg-theme-orange { background-color: #FFB766; }
+        .text-theme-orange { color: #E67E22; }
+        .text-theme-brown { color: #A04000; }
+        .border-theme-brown { border-color: #C05010; }
+        .btn-orange { background-color: #FF8C00; }
+        .btn-orange:hover { background-color: #E67E00; }
+        .bg-brand-active { background-color: #E67E22; }
+        .bg-brand-light { background-color: #FFF0E0; }
+        .font-rambla { font-family: 'Rambla', sans-serif; }
+        .lang-btn.active { font-weight: bold; text-decoration: underline; color: #E67E22; }
+        .lang-btn { cursor: pointer; }
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+
+<body class="font-sans text-gray-800 bg-gray-50 flex flex-col min-h-screen">
+
+    <header class="bg-white py-4 shadow-sm fixed top-0 left-0 w-full z-50 h-36">
+        <div class="container mx-auto px-4 flex justify-between items-center h-full max-w-7xl">
+
+            <div class="flex items-center gap-4">
+                <a href="index.html">
+                    <img src="./src/logo.svg" alt="AWF Logo" class="h-28 w-auto object-contain">
+                </a>
+            </div>
+
+            <div class="flex items-center gap-4">
+
+                <nav class="hidden md:block">
+                    <ul class="flex gap-8 text-gray-800 font-medium text-sm">
+                        <li><a href="#" class="hover:text-orange-500" data-i18n="nav_about">Nieuw project</a></li>
+                        <li><a href="#" class="hover:text-orange-500" data-i18n="nav_work">Beheer projecten</a></li>
+                        <li><a href="index.html" class="hover:text-orange-500" data-i18n="nav_contact">Log out</a></li>
+                    </ul>
+                </nav>
+
+                <button id="mobile-menu-button" onclick="toggleMobileMenu()" class="md:hidden p-2 text-gray-800">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="md:hidden bg-white px-4 pt-2 pb-4 border-t border-gray-100 absolute top-36 left-0 w-full shadow-md hidden">
+            <ul class="flex flex-col gap-3 text-gray-800 font-medium text-base">
+                <li><a href="#" class="hover:text-orange-500 block py-1" data-i18n="nav_about">Nieuw project </a></li>
+                <li><a href="#" class="hover:text-orange-500 block py-1" data-i18n="nav_work">Beheer projecten</a></li>
+                <li><a href="index.html" class="hover:text-orange-500 block py-1" data-i18n="nav_contact">Log out</a></li>
+                
+            </ul>
+        </div>
+
+    </header>
+    <main class="mt-40 mb-20 flex justify-center px-4">
+    <div class="bg-white shadow-xl rounded-2xl p-10 w-full max-w-4xl">
+
+        <h1 class="text-3xl font-rambla font-bold text-theme-orange mb-10">Nieuw Project</h1>
+
+        <form class="space-y-8">
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <label class="block font-medium mb-1">Project naam*</label>
+                    <input type="text"
+                        class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-theme-orange outline-none">
+                </div>
+
+                <div>
+                    <label class="block font-medium mb-1">Project locatie*</label>
+                    <input type="text"
+                        class="w-full border border-gray-300 resize-none rounded-lg px-3 py-2 focus:ring-2 focus:ring-theme-orange outline-none">
+                </div>
+            </div>
+
+            <div>
+                <label class="block font-medium mb-1">Project titel*</label>
+                <input type="text"
+                    class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-theme-orange outline-none">
+            </div>
+
+            <div>
+                <label class="block font-medium mb-1">Project descriptie*</label>
+                <textarea 
+                    class="w-full border border-gray-300 rounded-lg px-3 py-2 h-40 resize-none text-left focus:ring-2 focus:ring-theme-orange outline-none"></textarea>
+            </div>
+
+            <div>
+                <label class="block font-medium mb-1">Belangrijkste prestaties</label>
+                <input type="text"
+                    class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-theme-orange outline-none">
+                    
+            </div>
+
+            <div class="flex justify-end">
+                <button
+                    class="bg-theme-orange hover:bg-orange-500 text-white font-semibold px-6 py-2 rounded-lg shadow-md transition">
+                    Publiceren
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+</main>
+    </main>
+
+    <script>
+        const translations = {
+            en: {
+                page_title: "AWF - Our Work",
+                nav_about: "About us", nav_work: "Our work", nav_contact: "Contact", nav_donate: "Donate",
+                hero_title_projects: "Our Projects",
+
+                proj_1_title: "Gudalur Adivasi Hospital",
+                proj_1_loc: "Gudalur Valley",
+                proj_1_desc: "A 50-bed hospital providing quality healthcare to tribal and local communities. One of the most sought-after hospitals in the valley.",
+
+                proj_2_title: "School of Nursing",
+                proj_2_loc: "Nilgiris District",
+                proj_2_desc: "Formal nursing school training tribal girls and upgrading their skills. Graduates provide care across our healthcare network.",
+
+                proj_3_title: "Sickle Cell Centre",
+                proj_3_loc: "Gudalur Hospital",
+                proj_3_desc: "Conducting epidemiological assessments and care for sickle cell disease using sodium metabisulphite test and hemoglobin electrophoresis.",
+
+                btn_read_more: "Read More",
+
+                footer_org: "Organization", footer_annual: "Annual Report", footer_partner: "Partner with us",
+                footer_programs: "Programs", footer_hosp: "Hospital Services", footer_nurs: "Nursing school", footer_mobile: "Mobile Clinic", footer_disability: "Disability Services",
+                footer_support: "Support", footer_news: "Newsletter", footer_privacy: "Privacy Policy", footer_faq: "FAQ",
+                footer_rights: "2025 ASHWINI. All rights reserved.", footer_registered: "A Registered Charitable Society"
+            },
+            nl: {
+                page_title: "AWF - Ons Werk",
+                nav_about: "Over ons", nav_work: "Ons werk", nav_contact: "Contact", nav_donate: "Doneer",
+                hero_title_projects: "Onze Projecten",
+
+                proj_1_title: "Gudalur Adivasi Ziekenhuis",
+                proj_1_loc: "Gudalur Vallei",
+                proj_1_desc: "Een ziekenhuis met 50 bedden dat kwaliteitszorg biedt aan tribale en lokale gemeenschappen. Een van de meest gewilde ziekenhuizen in de vallei.",
+
+                proj_2_title: "Verpleegschool",
+                proj_2_loc: "Nilgiris District",
+                proj_2_desc: "Formele verpleegopleiding die tribale meisjes traint en hun vaardigheden verbetert. Afgestudeerden bieden zorg in ons hele gezondheidsnetwerk.",
+
+                proj_3_title: "Sikkelcel Centrum",
+                proj_3_loc: "Gudalur Ziekenhuis",
+                proj_3_desc: "Uitvoeren van epidemiologische beoordelingen en zorg voor sikkelcelziekte met behulp van natriummetabisulfiettest en hemoglobine-elektroforese.",
+
+                btn_read_more: "Lees Meer",
+
+                footer_org: "Organisatie", footer_annual: "Jaarverslag", footer_partner: "Partner worden",
+                footer_programs: "Programma's", footer_hosp: "Ziekenhuisdiensten", footer_nurs: "Verpleegschool", footer_mobile: "Mobiele Kliniek",
+                footer_support: "Steun ons", footer_news: "Nieuwsbrief", footer_privacy: "Privacybeleid", footer_faq: "Veelgestelde vragen",
+                footer_rights: "2025 ASHWINI. Alle rechten voorbehouden.", footer_registered: "Een Geregistreerde Liefdadigheidsinstelling"
+            }
+        };
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        function changeLanguage(lang) {
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    if (element.tagName === 'TITLE') {
+                        document.title = translations[lang][key];
+                    } else {
+                        element.innerHTML = translations[lang][key];
+                    }
+                }
+            });
+            const langButtons = document.querySelectorAll('.lang-btn');
+            langButtons.forEach(btn => btn.classList.remove('active'));
+            document.getElementById('btn-nl').classList.toggle('active', lang === 'nl');
+            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+
+            const btnNlMobile = document.getElementById('btn-nl-mobile');
+            const btnEnMobile = document.getElementById('btn-en-mobile');
+            if (btnNlMobile) btnNlMobile.classList.toggle('active', lang === 'nl');
+            if (btnEnMobile) btnEnMobile.classList.toggle('active', lang === 'en');
+        }
+    </script>
+</body>
+</html>
